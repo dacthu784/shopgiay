@@ -14,6 +14,7 @@ namespace shop_giay.Services
     {
         JsonResult AddData(UsersViewModel us);
         Task<JsonResult> AdddUser(UsersVM usersVM, List<IFormFile> files);
+        JsonResult DeleteData(int id);
         JsonResult EditData(int id, UsersViewModel us);
         List<UsersViewModel> GetAll();
     }
@@ -79,6 +80,29 @@ namespace shop_giay.Services
             {
 
             };
+            
+            
+        }
+
+        public JsonResult DeleteData(int id)
+        {
+            var a = _context.Users.SingleOrDefault(l=> l .IdUser == id);
+            if (a != null)
+            {
+                _context.Remove(a);
+                _context.SaveChanges();
+                return new JsonResult("da xoa thanh cong")
+                {
+                    StatusCode = StatusCodes.Status200OK
+                };
+            }
+            else
+            {
+                return new JsonResult("khong tim thay")
+                {
+                    StatusCode = StatusCodes.Status404NotFound
+                };
+            }
             
             
         }

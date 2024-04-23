@@ -36,6 +36,10 @@ namespace shop_giay.Controllers
         {
             return Ok(_UsersRepo.EditData(id,us));
         }
-
+        [HttpDelete("DeleteData")]
+        public IActionResult DeleteData(int id)
+        {
+            return Ok(_UsersRepo.DeleteData(id));
+        }
     }
 }
