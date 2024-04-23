@@ -31,6 +31,8 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IWriteFileRepository, WriteFileRepository>();
 builder.Services.AddScoped<ISendEmailServices, SendEmailServices>();
 
+DeleteDatabse();
+CreateDatabse();
 
 var app = builder.Build();
 
@@ -55,14 +57,14 @@ app.MapControllers();
 
 app.Run();
 
-//void DeleteDatabse()
-//{
-//    var dbcontext = new ShopGiayContext();
-//    dbcontext.Database.EnsureDeleted();
-//}
+void DeleteDatabse()
+{
+    var dbcontext = new ShopGiayContext();
+    dbcontext.Database.EnsureDeleted();
+}
 
-//void CreateDatabse()
-//{
-//    var dbcontext = new ShopGiayContext();
-//    dbcontext.Database.EnsureCreated();
-//}
+void CreateDatabse()
+{
+    var dbcontext = new ShopGiayContext();
+    dbcontext.Database.EnsureCreated();
+}

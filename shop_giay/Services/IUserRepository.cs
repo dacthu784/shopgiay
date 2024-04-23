@@ -100,7 +100,7 @@ namespace shop_giay.Services
                 editUser.DiaChi = us.DiaChi;
 
                 _context.SaveChanges();
-                new JsonResult("Edit thanh cong")
+                return  new JsonResult("Edit thanh cong")
                 {
                     StatusCode = StatusCodes.Status200OK
                 };
