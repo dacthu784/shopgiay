@@ -31,9 +31,8 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IWriteFileRepository, WriteFileRepository>();
 builder.Services.AddScoped<ISendEmailServices, SendEmailServices>();
 
-DeleteDatabse();
-CreateDatabse();
 
+//ColorRecognition.Color();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -57,14 +56,14 @@ app.MapControllers();
 
 app.Run();
 
-void DeleteDatabse()
-{
-    var dbcontext = new ShopGiayContext();
-    dbcontext.Database.EnsureDeleted();
-}
+//void DeleteDatabse()
+//{
+//    var dbcontext = new ShopGiayContext();
+//    dbcontext.Database.EnsureDeleted();
+//}
 
-void CreateDatabse()
-{
-    var dbcontext = new ShopGiayContext();
-    dbcontext.Database.EnsureCreated();
-}
+//void CreateDatabse()
+//{
+//    var dbcontext = new ShopGiayContext();
+//    dbcontext.Database.EnsureCreated();
+//}

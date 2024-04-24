@@ -11,6 +11,22 @@
   },
   {
     "ContainingType": "shop_giay.Controllers.UserController",
+    "Method": "AddData",
+    "RelativePath": "api/User/AddData",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "us",
+        "Type": "shop_giay.ViewModel.UsersViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.UserController",
     "Method": "AdddUser",
     "RelativePath": "api/User/AddUser",
     "HttpMethod": "POST",
@@ -31,6 +47,43 @@
         "Name": "files",
         "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.UserController",
+    "Method": "DeleteData",
+    "RelativePath": "api/User/DeleteData",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.UserController",
+    "Method": "EditData",
+    "RelativePath": "api/User/EditData",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "us",
+        "Type": "shop_giay.ViewModel.UsersViewModel",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
