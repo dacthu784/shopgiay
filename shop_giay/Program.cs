@@ -30,7 +30,7 @@ builder.Services.AddScoped<ILoaiUsersRepository, LoaiUsersRepo>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IWriteFileRepository, WriteFileRepository>();
 builder.Services.AddScoped<ISendEmailServices, SendEmailServices>();
-
+//builder.Services.AddScoped<ColorRecognition>;
 
 //ColorRecognition.Color();
 var app = builder.Build();
