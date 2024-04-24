@@ -186,3 +186,11 @@ D:\workspace_vsstudio\Back-end\shopgiay\shop_giay\obj\Debug\net7.0\refint\shop_g
 D:\workspace_vsstudio\Back-end\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.pdb
 D:\workspace_vsstudio\Back-end\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.genruntimeconfig.cache
 D:\workspace_vsstudio\Back-end\shopgiay\shop_giay\obj\Debug\net7.0\ref\shop_giay.dll
+C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.AssemblyInfo.cs
+C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.sourcelink.json
