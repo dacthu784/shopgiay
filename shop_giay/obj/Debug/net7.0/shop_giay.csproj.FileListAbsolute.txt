@@ -282,3 +282,4 @@ C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\refint\shop_giay.dll
 C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.pdb
 C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\shop_giay.genruntimeconfig.cache
 C:\Users\PC\Desktop\shopgiay\shop_giay\obj\Debug\net7.0\ref\shop_giay.dll
+D:\workspace_vsstudio\Back-end\shopgiay\shop_giay\bin\Debug\net7.0\Emgu.CV.dll

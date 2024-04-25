@@ -30,9 +30,25 @@ builder.Services.AddScoped<ILoaiUsersRepository, LoaiUsersRepo>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IWriteFileRepository, WriteFileRepository>();
 builder.Services.AddScoped<ISendEmailServices, SendEmailServices>();
+builder.Services.AddScoped<ISanPhamGiayRepository, SanPhamGiayRepository>();
+builder.Services.AddScoped<ILoaiGiayRepository,LoaiGiayRepo>();
+builder.Services.AddScoped<ITinhTrangDonRepository, TinhTrangDonRepository>();
+builder.Services.AddScoped<INhaCungCapRepository, NhaCungCapRepository>();
+builder.Services.AddScoped<IOderRepository, OderRepository>();
+builder.Services.AddScoped<IDonNhapHangHoaRepository, DonNhapHangHoaRepository>();
+builder.Services.AddScoped<IChiTietOrderRepository, ChiTietOrderRepository>();
+
+
+
+
+
+
+
+
 //builder.Services.AddScoped<ColorRecognition>;
 
 //ColorRecognition.Color();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

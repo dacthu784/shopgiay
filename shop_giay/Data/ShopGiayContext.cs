@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -43,7 +44,7 @@ public partial class ShopGiayContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ShopGiay;Integrated Security=True;Trust Server Certificate=True;");
+        => optionsBuilder.UseSqlServer("Data Source=MSI\\SQLEXPRESS;Initial Catalog=ShopGiay;Integrated Security=True;Trust Server Certificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -161,7 +162,7 @@ public partial class ShopGiayContext : DbContext
 
             entity.ToTable("LoaiGiay");
 
-            entity.Property(e => e.IdLoaiGiay).ValueGeneratedNever();
+            entity.Property(e => e.IdLoaiGiay);
             entity.Property(e => e.MaLoaiGiay).HasMaxLength(100);
             entity.Property(e => e.TenLoaiGiay).HasMaxLength(10);
         });
@@ -170,7 +171,7 @@ public partial class ShopGiayContext : DbContext
         {
             entity.HasKey(e => e.IdLoaiUser).HasName("PK_AdminActions");
 
-            entity.Property(e => e.IdLoaiUser).ValueGeneratedNever();
+            entity.Property(e => e.IdLoaiUser);
             entity.Property(e => e.MaLoai)
                 .HasMaxLength(255)
                 .IsUnicode(false);
@@ -249,7 +250,7 @@ public partial class ShopGiayContext : DbContext
 
             entity.ToTable("TinhTrangDon");
 
-            entity.Property(e => e.IdTinhTrangDon).ValueGeneratedNever();
+            entity.Property(e => e.IdTinhTrangDon);
             entity.Property(e => e.MaTinhTrang)
                 .HasMaxLength(50)
                 .IsUnicode(false);
