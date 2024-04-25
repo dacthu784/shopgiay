@@ -7,6 +7,7 @@ using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
 using MimeKit.Text;
+using System.Drawing;
 
 namespace shop_giay.Services
 {
@@ -44,7 +45,7 @@ namespace shop_giay.Services
             _context.SaveChanges();
             return new JsonResult("add thanh cong")
             {
-
+                StatusCode=StatusCodes.Status201Created
             };
         }
 
@@ -67,15 +68,15 @@ namespace shop_giay.Services
                 }
                 _context.SaveChanges();
             }
+            
+          //  var email = new EmailModel
+          //  {
+          //      ToEmail = usersVM.Email,
+          //      Subject = "Tài khoản của bạn bla bla bla",
+          //      Body = " Thông tin đăng nhâp Username:  pass:123",
+          //  };
 
-            var email = new EmailModel
-            {
-                ToEmail = usersVM.Email,
-                Subject = "Tài khoản của bạn bla bla bla",
-                Body = " Thông tin đăng nhâp Username:  pass:123",
-            };
-
-          _SendEmailServices.Send(email);
+            //_SendEmailServices.Send(email);
             return new JsonResult("thanh cong")
             {
 
@@ -142,6 +143,7 @@ namespace shop_giay.Services
                 DiaChi = l.DiaChi,
                 IdLoaiUsers = l.IdLoaiUsers,
             }).ToList();
+            
             return users;
         }
     }
