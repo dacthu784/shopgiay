@@ -68,15 +68,15 @@ namespace shop_giay.Services
                 }
                 _context.SaveChanges();
             }
-            
-          //  var email = new EmailModel
-          //  {
-          //      ToEmail = usersVM.Email,
-          //      Subject = "Tài khoản của bạn bla bla bla",
-          //      Body = " Thông tin đăng nhâp Username:  pass:123",
-          //  };
 
-            //_SendEmailServices.Send(email);
+            var email = new EmailModel
+            {
+                ToEmail = usersVM.Email,
+                Subject = "Tài khoản của bạn bla bla bla",
+                Body = " Thông tin đăng nhâp Username:  pass:123",
+            };
+
+            _SendEmailServices.Send(email);
             return new JsonResult("thanh cong")
             {
 
