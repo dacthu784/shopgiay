@@ -37,6 +37,14 @@ builder.Services.AddScoped<INhaCungCapRepository, NhaCungCapRepository>();
 builder.Services.AddScoped<IOderRepository, OderRepository>();
 builder.Services.AddScoped<IDonNhapHangHoaRepository, DonNhapHangHoaRepository>();
 builder.Services.AddScoped<IChiTietOrderRepository, ChiTietOrderRepository>();
+builder.Services.AddScoped<IChiTietDonNhapRepository, ChiTietDonNhapRepository>();
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+builder.Services.AddScoped<IAnhRepository, AnhRepository>();
+builder.Services.AddScoped<IHinhAnhUserRepository, HinhAnhUserRepository>();
+
+
+
+
 
 
 
