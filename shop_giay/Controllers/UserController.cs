@@ -31,7 +31,7 @@ namespace shop_giay.Controllers
         {
             return Ok(_UsersRepo.AddData(us));
         }
-        [HttpPut("EditData")]
+        [HttpPut("EditData,{id:int}")]
         public IActionResult EditData(int id,UsersViewModel us)
         {
             return Ok(_UsersRepo.EditData(id,us));

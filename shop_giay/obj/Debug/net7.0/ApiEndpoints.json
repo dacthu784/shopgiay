@@ -1,8 +1,528 @@
 [
   {
+    "ContainingType": "shop_giay.Controllers.ChiTietOrderController",
+    "Method": "AddChiTietOder",
+    "RelativePath": "api/ChiTietOrder/AddChiTietOder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "odr",
+        "Type": "shop_giay.ViewModel.ChiTietOrderVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.ChiTietOrderController",
+    "Method": "deletechitietorder",
+    "RelativePath": "api/ChiTietOrder/deletechitietorder",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.ChiTietOrderController",
+    "Method": "EditChiTietOder",
+    "RelativePath": "api/ChiTietOrder/EditChiTietOder",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "odr",
+        "Type": "shop_giay.ViewModel.ChiTietOrderVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.ChiTietOrderController",
+    "Method": "GetAll",
+    "RelativePath": "api/ChiTietOrder/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.DonNhapHangHoaController",
+    "Method": "AddDonNhapHangHoa",
+    "RelativePath": "api/DonNhapHangHoa/AddDonNhapHangHoa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dnhh",
+        "Type": "shop_giay.ViewModel.DonNhapHangHoaVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.DonNhapHangHoaController",
+    "Method": "DeleteDonNhapHangHoa",
+    "RelativePath": "api/DonNhapHangHoa/DeleteDonNhapHangHoa",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.DonNhapHangHoaController",
+    "Method": "EditDonNhapHangHoa",
+    "RelativePath": "api/DonNhapHangHoa/EditDonNhapHangHoa",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "dnhh",
+        "Type": "shop_giay.ViewModel.DonNhapHangHoaVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.DonNhapHangHoaController",
+    "Method": "GetAll",
+    "RelativePath": "api/DonNhapHangHoa/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.LoaiGiayController",
+    "Method": "AddLoaiGiay",
+    "RelativePath": "api/LoaiGiay/AddLoaiGiay",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loaigiay",
+        "Type": "shop_giay.ViewModel.LoaiGiayVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.LoaiGiayController",
+    "Method": "DeleteLoaiGiay",
+    "RelativePath": "api/LoaiGiay/DeleteLoaiGiay",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.LoaiGiayController",
+    "Method": "EditLoaiGiay",
+    "RelativePath": "api/LoaiGiay/EditLoaiGiay",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "lg",
+        "Type": "shop_giay.ViewModel.LoaiGiayVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.LoaiGiayController",
+    "Method": "GetAll",
+    "RelativePath": "api/LoaiGiay/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.LoaiUsersController",
+    "Method": "AddLoaiUser",
+    "RelativePath": "api/LoaiUsers/AddLoaiUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lus",
+        "Type": "shop_giay.ViewModel.LoaiUsersVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.LoaiUsersController",
+    "Method": "DeleteLoaiUser",
+    "RelativePath": "api/LoaiUsers/DeleteLoaiUser",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.LoaiUsersController",
+    "Method": "EditLoaiUser",
+    "RelativePath": "api/LoaiUsers/EditLoaiUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "us",
+        "Type": "shop_giay.ViewModel.LoaiUsersVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "shop_giay.Controllers.LoaiUsersController",
     "Method": "GetAll",
     "RelativePath": "api/LoaiUsers/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.NhaCungCapController",
+    "Method": "AddNhaCungCap",
+    "RelativePath": "api/NhaCungCap/AddNhaCungCap",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ncc",
+        "Type": "shop_giay.ViewModel.NhaCungCapVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.NhaCungCapController",
+    "Method": "Deletenhacungcap",
+    "RelativePath": "api/NhaCungCap/Deletenhacungcap",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.NhaCungCapController",
+    "Method": "EditNhaCungCap",
+    "RelativePath": "api/NhaCungCap/EditNhaCungCap",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ncc",
+        "Type": "shop_giay.ViewModel.NhaCungCapVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.NhaCungCapController",
+    "Method": "GetAll",
+    "RelativePath": "api/NhaCungCap/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.OderController",
+    "Method": "AddOrder",
+    "RelativePath": "api/Oder/AddOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "odr",
+        "Type": "shop_giay.ViewModel.OrderVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.OderController",
+    "Method": "DeleteOrder",
+    "RelativePath": "api/Oder/DeleteOrder",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.OderController",
+    "Method": "EditOrder",
+    "RelativePath": "api/Oder/EditOrder",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "odr",
+        "Type": "shop_giay.ViewModel.OrderVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.OderController",
+    "Method": "GetAll",
+    "RelativePath": "api/Oder/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SanPhamGiayController",
+    "Method": "AddSanPhamGiay",
+    "RelativePath": "api/SanPhamGiay/AddSanPhamGiay",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "spg",
+        "Type": "shop_giay.ViewModel.SanPhamGiayVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SanPhamGiayController",
+    "Method": "DeleteSanPhamGiay",
+    "RelativePath": "api/SanPhamGiay/DeleteSanPhamGiay",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SanPhamGiayController",
+    "Method": "EditSanPhamGiay",
+    "RelativePath": "api/SanPhamGiay/EditSanPhamGiay",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "spg",
+        "Type": "shop_giay.ViewModel.SanPhamGiayVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SanPhamGiayController",
+    "Method": "GetAll",
+    "RelativePath": "api/SanPhamGiay/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SanPhamGiayController",
+    "Method": "GetById",
+    "RelativePath": "api/SanPhamGiay/getbyid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "shop_giay.ViewModel.SanPhamGiayMD",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.TinhTrangDonController",
+    "Method": "AddTinhTrangDon",
+    "RelativePath": "api/TinhTrangDon/AddTinhTrangDon",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ttd",
+        "Type": "shop_giay.ViewModel.TinhTrangDonVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.TinhTrangDonController",
+    "Method": "DeleteTinhTrangdon",
+    "RelativePath": "api/TinhTrangDon/DeleteTinhTrangDon",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.TinhTrangDonController",
+    "Method": "EditTinhTrangDon",
+    "RelativePath": "api/TinhTrangDon/EditTinhTrangDon",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ttd",
+        "Type": "shop_giay.ViewModel.TinhTrangDonVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.TinhTrangDonController",
+    "Method": "GetAll",
+    "RelativePath": "api/TinhTrangDon/GetAll",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -70,7 +590,7 @@
   {
     "ContainingType": "shop_giay.Controllers.UserController",
     "Method": "EditData",
-    "RelativePath": "api/User/EditData",
+    "RelativePath": "api/User/EditData,{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -78,7 +598,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "us",

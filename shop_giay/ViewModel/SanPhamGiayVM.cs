@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-﻿namespace shop_giay.ViewModel
-{
-    public class SanPhamGiayVM
-    {
-=======
-﻿using shop_giay.Data;
+using shop_giay.Data;
+
 
 namespace shop_giay.ViewModel
 {
@@ -35,6 +30,5 @@ namespace shop_giay.ViewModel
         public virtual ICollection<ChiTietOrder> ChiTietOrders { get; set; } = new List<ChiTietOrder>();
 
         public virtual LoaiGiay? IdLoaiGiayNavigation { get; set; }
->>>>>>> 6794dd637936693cac6040777474edb876e72486
     }
 }
