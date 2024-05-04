@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+﻿using shop_giay.Data;
+=======
 using shop_giay.Data;
 
+>>>>>>> 777673126970d71958c7b9b02b2f20988a2a3bbd
 
 namespace shop_giay.ViewModel
 {
