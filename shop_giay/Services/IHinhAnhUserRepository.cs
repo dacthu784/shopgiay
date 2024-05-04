@@ -15,7 +15,7 @@ namespace shop_giay.Services
     {
         private readonly ShopGiayContext _context;
 
-        HinhAnhUserRepository(ShopGiayContext context)
+        public HinhAnhUserRepository(ShopGiayContext context)
         {
             _context = context;
         }
