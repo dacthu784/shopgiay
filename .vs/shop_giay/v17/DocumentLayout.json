@@ -3,19 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\shopgiay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\services\\isendemailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\services\\isendemailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|c:\\users\\pc\\desktop\\shopgiay\\shop_giay\\services\\ihinhanhuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\services\\ihinhanhuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\viewmodel\\sanphamgiayvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\viewmodel\\sanphamgiayvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\viewmodel\\donnhaphanghoavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\viewmodel\\donnhaphanghoavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\services\\isendemailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\services\\isendemailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\viewmodel\\loaiusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\viewmodel\\loaiusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|c:\\users\\pc\\desktop\\shopgiay\\shop_giay\\services\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\services\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\services\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -41,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\viewmodel\\tinhtrangdonvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\viewmodel\\tinhtrangdonvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\data\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,11 +82,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "IHinhAnhUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IHinhAnhUserRepository.cs",
+              "RelativeDocumentMoniker": "shop_giay\\Services\\IHinhAnhUserRepository.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IHinhAnhUserRepository.cs",
+              "RelativeToolTip": "shop_giay\\Services\\IHinhAnhUserRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwAoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T13:10:54.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SanPhamGiayVM.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\SanPhamGiayVM.cs",
+              "RelativeDocumentMoniker": "shop_giay\\ViewModel\\SanPhamGiayVM.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\SanPhamGiayVM.cs",
+              "RelativeToolTip": "shop_giay\\ViewModel\\SanPhamGiayVM.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T12:54:22.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ILoaiUsersRepository.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\ILoaiUsersRepository.cs",
               "RelativeDocumentMoniker": "shop_giay\\Services\\ILoaiUsersRepository.cs",
@@ -86,12 +119,11 @@
               "RelativeToolTip": "shop_giay\\Services\\ILoaiUsersRepository.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T05:21:40.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-04T05:21:40.025Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ILoaiGiayRepository.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\ILoaiGiayRepository.cs",
               "RelativeDocumentMoniker": "shop_giay\\Services\\ILoaiGiayRepository.cs",
@@ -103,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Data\\User.cs",
               "RelativeDocumentMoniker": "shop_giay\\Data\\User.cs",
@@ -115,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Message.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Data\\Message.cs",
               "RelativeDocumentMoniker": "shop_giay\\Data\\Message.cs",
@@ -127,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "INhaCungCapRepository.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\INhaCungCapRepository.cs",
               "RelativeDocumentMoniker": "shop_giay\\Services\\INhaCungCapRepository.cs",
@@ -139,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IUserRepository.cs",
               "RelativeDocumentMoniker": "shop_giay\\Services\\IUserRepository.cs",
@@ -147,12 +179,11 @@
               "RelativeToolTip": "shop_giay\\Services\\IUserRepository.cs",
               "ViewState": "AQIAADEAAAAAAAAAAAAowDcAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T08:46:27.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-24T08:46:27.676Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "TinhTrangDonVM.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\TinhTrangDonVM.cs",
               "RelativeDocumentMoniker": "shop_giay\\ViewModel\\TinhTrangDonVM.cs",
@@ -164,19 +195,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Program.cs",
               "RelativeDocumentMoniker": "shop_giay\\Program.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Program.cs",
               "RelativeToolTip": "shop_giay\\Program.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAEIAAAAAAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAEwDsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T13:26:28.485Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "LoaiGiayVM.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\LoaiGiayVM.cs",
               "RelativeDocumentMoniker": "shop_giay\\ViewModel\\LoaiGiayVM.cs",
@@ -188,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "shop_giay\\Controllers\\UserController.cs",
@@ -200,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "ChiTietOrderVM.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\ChiTietOrderVM.cs",
               "RelativeDocumentMoniker": "shop_giay\\ViewModel\\ChiTietOrderVM.cs",
@@ -212,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "LoaiUsersVM.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\LoaiUsersVM.cs",
               "RelativeDocumentMoniker": "shop_giay\\ViewModel\\LoaiUsersVM.cs",
@@ -220,12 +251,11 @@
               "RelativeToolTip": "shop_giay\\ViewModel\\LoaiUsersVM.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAwBMAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T13:28:39.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-03T13:28:39.845Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ShopGiayContext.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Data\\ShopGiayContext.cs",
               "RelativeDocumentMoniker": "shop_giay\\Data\\ShopGiayContext.cs",
@@ -237,33 +267,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "DonNhapHangHoaVM.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\DonNhapHangHoaVM.cs",
               "RelativeDocumentMoniker": "shop_giay\\ViewModel\\DonNhapHangHoaVM.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\DonNhapHangHoaVM.cs",
               "RelativeToolTip": "shop_giay\\ViewModel\\DonNhapHangHoaVM.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAkwBgAAAAFAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAcwBwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T08:21:44.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-28T08:21:44.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ISendEmailServices.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\ISendEmailServices.cs",
               "RelativeDocumentMoniker": "shop_giay\\Services\\ISendEmailServices.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\ISendEmailServices.cs",
               "RelativeToolTip": "shop_giay\\Services\\ISendEmailServices.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAkwDkAAAAAAAAA",
+              "ViewState": "AQIAADQAAAAAAAAAAAAqwDkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T08:46:23.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-24T08:46:23.688Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "EmailModel.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\EmailModel.cs",
               "RelativeDocumentMoniker": "shop_giay\\ViewModel\\EmailModel.cs",
