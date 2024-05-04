@@ -9,6 +9,8 @@ public partial class User
 
     public string? TenUser { get; set; }
 
+    public string? HoTen { get; set; }
+
     public string? Password { get; set; }
 
     public string? Email { get; set; }
@@ -25,7 +27,7 @@ public partial class User
 
     public virtual LoaiUser IdLoaiUsersNavigation { get; set; } = null!;
 
-    public virtual ICollection<Message> Messages { get; set; } = new List<Message>();
-
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
+    public virtual ICollection<SanPhamYeuThich> SanPhamYeuThiches { get; set; } = new List<SanPhamYeuThich>();
 }

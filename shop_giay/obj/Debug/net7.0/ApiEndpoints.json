@@ -441,74 +441,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "shop_giay.Controllers.MessageController",
-    "Method": "EditMessage",
-    "RelativePath": "api/Message/AddMessage",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "mes",
-        "Type": "shop_giay.ViewModel.MessageVM",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "shop_giay.Controllers.MessageController",
-    "Method": "DeleteMessage",
-    "RelativePath": "api/Message/DeleteMessage",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "shop_giay.Controllers.MessageController",
-    "Method": "EditMessage",
-    "RelativePath": "api/Message/EditMessage",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "mes",
-        "Type": "shop_giay.ViewModel.MessageVM",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "shop_giay.Controllers.MessageController",
-    "Method": "GetAll",
-    "RelativePath": "api/Message/GetAll",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "shop_giay.Controllers.NhaCungCapController",
     "Method": "AddNhaCungCap",
     "RelativePath": "api/NhaCungCap/AddNhaCungCap",
@@ -796,7 +728,7 @@
     "Parameters": [
       {
         "Name": "us",
-        "Type": "shop_giay.ViewModel.UsersViewModel",
+        "Type": "shop_giay.ViewModel.UsersVM",
         "IsRequired": true
       }
     ],
@@ -859,7 +791,7 @@
       },
       {
         "Name": "us",
-        "Type": "shop_giay.ViewModel.UsersViewModel",
+        "Type": "shop_giay.ViewModel.UsersVM",
         "IsRequired": true
       }
     ],
@@ -874,27 +806,5 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_1",
-    "RelativePath": "broadcast",
-    "HttpMethod": "POST",
-    "IsController": false,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "message",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
   }
 ]

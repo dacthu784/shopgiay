@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,13 +29,15 @@ public partial class ShopGiayContext : DbContext
 
     public virtual DbSet<LoaiUser> LoaiUsers { get; set; }
 
-    public virtual DbSet<Message> Messages { get; set; }
-
     public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
 
+    public virtual DbSet<ProductOption> ProductOptions { get; set; }
+
     public virtual DbSet<SanPhamGiay> SanPhamGiays { get; set; }
+
+    public virtual DbSet<SanPhamYeuThich> SanPhamYeuThiches { get; set; }
 
     public virtual DbSet<TinhTrangDon> TinhTrangDons { get; set; }
 
@@ -44,15 +45,15 @@ public partial class ShopGiayContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=MSI\\SQLEXPRESS;Initial Catalog=ShopGiay;Integrated Security=True;Trust Server Certificate=True;");
+        => optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ShopGiay;Integrated Security=True;Trust Server Certificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Anh>(entity =>
         {
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.HasIndex(e => e.Idsanpham, "IX_Anhs_idsanpham");
+
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Idsanpham).HasColumnName("idsanpham");
             entity.Property(e => e.Url)
                 .HasMaxLength(100)
@@ -74,7 +75,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.HasIndex(e => e.IdSanPham, "IX_ChiTietDonNhap_IdSanPham");
 
-            entity.Property(e => e.IdChiTietDonNhap).ValueGeneratedNever();
             entity.Property(e => e.Vat).HasColumnName("VAT");
 
             entity.HasOne(d => d.IdDonNhapHangHoaNavigation).WithMany(p => p.ChiTietDonNhaps)
@@ -92,6 +92,9 @@ public partial class ShopGiayContext : DbContext
 
             entity.HasIndex(e => e.IdSanPham, "IX_ChiTietOrders_IdSanPham");
 
+            entity.HasIndex(e => e.Idloai, "IX_ChiTietOrders_idloai");
+
+            entity.Property(e => e.IdOrder).ValueGeneratedOnAdd();
             entity.Property(e => e.Gia).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.Idloai).HasColumnName("idloai");
             entity.Property(e => e.Ratting)
@@ -126,7 +129,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.HasIndex(e => e.IdTinhTrangDon, "IX_DonNhapHangHoa_IdTinhTrangDon");
 
-            entity.Property(e => e.IdDonNhap).ValueGeneratedNever();
             entity.Property(e => e.NgayTaoDon).HasColumnType("date");
 
             entity.HasOne(d => d.IdNhaCungCapNavigation).WithMany(p => p.DonNhapHangHoas)
@@ -143,6 +145,8 @@ public partial class ShopGiayContext : DbContext
             entity.HasKey(e => e.IdHinhNguoiDung);
 
             entity.ToTable("HinhAnhUser");
+
+            entity.HasIndex(e => e.Iduser, "IX_HinhAnhUser_iduser");
 
             entity.Property(e => e.Iduser).HasColumnName("iduser");
             entity.Property(e => e.Isavarta).HasColumnName("isavarta");
@@ -162,7 +166,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.ToTable("LoaiGiay");
 
-            entity.Property(e => e.IdLoaiGiay);
             entity.Property(e => e.MaLoaiGiay).HasMaxLength(100);
             entity.Property(e => e.TenLoaiGiay).HasMaxLength(10);
         });
@@ -171,25 +174,10 @@ public partial class ShopGiayContext : DbContext
         {
             entity.HasKey(e => e.IdLoaiUser).HasName("PK_AdminActions");
 
-            entity.Property(e => e.IdLoaiUser);
             entity.Property(e => e.MaLoai)
                 .HasMaxLength(255)
                 .IsUnicode(false);
             entity.Property(e => e.TenLoai).HasMaxLength(50);
-        });
-
-        modelBuilder.Entity<Message>(entity =>
-        {
-            entity.HasKey(e => e.IdMessage).HasName("PK__Messages__C87C037CBA3A1542");
-
-            entity.HasIndex(e => e.IdUser, "IX_Messages_IdUser");
-
-            entity.Property(e => e.IdMessage).ValueGeneratedNever();
-            entity.Property(e => e.DauThoiGian).HasColumnType("datetime");
-
-            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.Messages)
-                .HasForeignKey(d => d.IdUser)
-                .HasConstraintName("FK__Messages__UserID__160F4887");
         });
 
         modelBuilder.Entity<NhaCungCap>(entity =>
@@ -214,13 +202,27 @@ public partial class ShopGiayContext : DbContext
 
             entity.HasIndex(e => e.IdUser, "IX_Orders_IdUser");
 
-            entity.Property(e => e.IdOrder).ValueGeneratedNever();
             entity.Property(e => e.NgayOrder).HasColumnType("date");
             entity.Property(e => e.TongTien).HasColumnType("decimal(10, 2)");
 
             entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.IdUser)
                 .HasConstraintName("FK__Orders__UserID__4AB81AF0");
+        });
+
+        modelBuilder.Entity<ProductOption>(entity =>
+        {
+            entity.HasKey(e => e.OptionId).HasName("PK__ProductO__92C7A1DF63CA3D93");
+
+            entity.Property(e => e.OptionId).HasColumnName("OptionID");
+            entity.Property(e => e.OptionName).HasMaxLength(100);
+            entity.Property(e => e.OptionValue).HasMaxLength(255);
+            entity.Property(e => e.ProductId).HasColumnName("ProductID");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.ProductOptions)
+                .HasForeignKey(d => d.ProductId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__ProductOp__Produ__4F47C5E3");
         });
 
         modelBuilder.Entity<SanPhamGiay>(entity =>
@@ -231,7 +233,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.HasIndex(e => e.IdLoaiGiay, "IX_SanPhamGiay_IdLoaiGiay");
 
-            entity.Property(e => e.IdSanPham).ValueGeneratedNever();
             entity.Property(e => e.Gia).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.GiamGia).HasColumnType("decimal(18, 0)");
             entity.Property(e => e.MoTa).HasColumnType("text");
@@ -244,13 +245,34 @@ public partial class ShopGiayContext : DbContext
                 .HasConstraintName("FK__Products__Catego__47DBAE45");
         });
 
+        modelBuilder.Entity<SanPhamYeuThich>(entity =>
+        {
+            entity.HasKey(e => e.IdSanPhamYeuThich).HasName("PK__SanPhamY__30406ADED121AE83");
+
+            entity.ToTable("SanPhamYeuThich");
+
+            entity.Property(e => e.AddedDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.IdsanPham).HasColumnName("IDSanPham");
+
+            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.SanPhamYeuThiches)
+                .HasForeignKey(d => d.IdUser)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__SanPhamYe__IdUse__5CA1C101");
+
+            entity.HasOne(d => d.IdsanPhamNavigation).WithMany(p => p.SanPhamYeuThiches)
+                .HasForeignKey(d => d.IdsanPham)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__SanPhamYe__IDSan__5D95E53A");
+        });
+
         modelBuilder.Entity<TinhTrangDon>(entity =>
         {
             entity.HasKey(e => e.IdTinhTrangDon);
 
             entity.ToTable("TinhTrangDon");
 
-            entity.Property(e => e.IdTinhTrangDon);
             entity.Property(e => e.MaTinhTrang)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -263,13 +285,13 @@ public partial class ShopGiayContext : DbContext
 
             entity.HasIndex(e => e.IdLoaiUsers, "IX_Users_IdLoaiUsers");
 
-            entity.Property(e => e.IdUser).ValueGeneratedNever();
             entity.Property(e => e.DiaChi)
                 .HasMaxLength(255)
                 .IsUnicode(false);
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+            entity.Property(e => e.HoTen).HasMaxLength(50);
             entity.Property(e => e.IdLoaiUsers).HasDefaultValueSql("('User')");
             entity.Property(e => e.NgaySua).HasColumnType("date");
             entity.Property(e => e.NgayTao).HasColumnType("date");

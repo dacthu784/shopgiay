@@ -13,10 +13,6 @@ public partial class LoaiGiay
 
     public int? ThuTuHienThi { get; set; }
 
-    public int? DanhSachCha { get; set; }
-
-    public int? DanhSachCon { get; set; }
-
     public virtual ICollection<ChiTietOrder> ChiTietOrders { get; set; } = new List<ChiTietOrder>();
 
     public virtual ICollection<SanPhamGiay> SanPhamGiays { get; set; } = new List<SanPhamGiay>();

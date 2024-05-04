@@ -26,4 +26,8 @@ public partial class SanPhamGiay
     public virtual ICollection<ChiTietOrder> ChiTietOrders { get; set; } = new List<ChiTietOrder>();
 
     public virtual LoaiGiay? IdLoaiGiayNavigation { get; set; }
+
+    public virtual ICollection<ProductOption> ProductOptions { get; set; } = new List<ProductOption>();
+
+    public virtual ICollection<SanPhamYeuThich> SanPhamYeuThiches { get; set; } = new List<SanPhamYeuThich>();
 }

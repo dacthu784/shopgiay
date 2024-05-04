@@ -17,9 +17,9 @@ namespace shop_giay.Controllers
             _UsersRepo = UsersRepo;
         }
         [HttpPost("AddUser")]
-        public async Task<IActionResult> AdddUser([FromForm] UsersVM usersVM , List<IFormFile> files)
+        public async Task<IActionResult> AdddUser([FromForm] UsersSendMail users , List<IFormFile> files)
         {
-            return Ok(await _UsersRepo.AdddUser(usersVM, files));
+            return Ok(await _UsersRepo.AdddUser(users, files));
         }
         [HttpGet("GetAll")]
         public IActionResult GetAll()
@@ -27,12 +27,12 @@ namespace shop_giay.Controllers
             return Ok(_UsersRepo.GetAll());
         }
         [HttpPost("AddData")]
-        public IActionResult AddData(UsersViewModel us)
+        public IActionResult AddData(UsersVM us)
         {
             return Ok(_UsersRepo.AddData(us));
         }
         [HttpPut("EditData,{id:int}")]
-        public IActionResult EditData(int id,UsersViewModel us)
+        public IActionResult EditData(int id, UsersVM us)
         {
             return Ok(_UsersRepo.EditData(id,us));
         }

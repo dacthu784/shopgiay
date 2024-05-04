@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("shop_giay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b5a26f1b803e57c05ebc754a8a232e5447c16b0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae0ae84427fcdfe3db6fa816baa2eb72d40c7b0c")]
 [assembly: System.Reflection.AssemblyProductAttribute("shop_giay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("shop_giay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

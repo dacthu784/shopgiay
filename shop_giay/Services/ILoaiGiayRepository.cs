@@ -28,8 +28,7 @@ namespace shop_giay.Services
                 MaLoaiGiay = loaigiay.MaLoaiGiay,
                 TenLoaiGiay = loaigiay.TenLoaiGiay,
                 ThuTuHienThi = loaigiay.ThuTuHienThi,
-                DanhSachCha = loaigiay.DanhSachCha,
-                DanhSachCon = loaigiay.DanhSachCon,
+                
 
             };
             _context.LoaiGiays.Add(a);
@@ -76,8 +75,7 @@ namespace shop_giay.Services
                 editLoaiGiay.MaLoaiGiay = lg.MaLoaiGiay;
                 editLoaiGiay.TenLoaiGiay = lg.TenLoaiGiay;
                 editLoaiGiay.ThuTuHienThi = lg.ThuTuHienThi;
-                editLoaiGiay.DanhSachCha = lg.DanhSachCha;
-                editLoaiGiay.DanhSachCon = lg.DanhSachCon;
+               
 
 
                 _context.SaveChanges();
@@ -96,9 +94,7 @@ namespace shop_giay.Services
                 MaLoaiGiay = o.MaLoaiGiay,
                 TenLoaiGiay= o.TenLoaiGiay,
                 ThuTuHienThi=o.ThuTuHienThi,
-                DanhSachCha=o.DanhSachCha,
-                DanhSachCon=o.DanhSachCon,
-             
+               
             }).ToList();
             return kq;
         }

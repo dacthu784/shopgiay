@@ -8,16 +8,18 @@ using MailKit.Security;
 using MimeKit;
 using MimeKit.Text;
 using System.Drawing;
+using shop_giay.OtherServices;
+using shop_giay.Helper;
 
 namespace shop_giay.Services
 {
     public interface IUserRepository
     {
-        JsonResult AddData(UsersViewModel us);
-        Task<JsonResult> AdddUser(UsersVM usersVM, List<IFormFile> files);
+        JsonResult AddData(UsersVM us);
+        Task<JsonResult> AdddUser(UsersSendMail usersVM, List<IFormFile> files);
         JsonResult DeleteData(int id);
-        JsonResult EditData(int id, UsersViewModel us);
-        List<UsersViewModel> GetAll();
+        JsonResult EditData(int id, UsersVM us);
+        List<UsersMD> GetAll();
     }
     public class UserRepository : IUserRepository
     {
@@ -31,7 +33,7 @@ namespace shop_giay.Services
             _SendEmailServices = sendEmailServices;
         }
 
-        public JsonResult AddData(UsersViewModel us)
+        public JsonResult AddData(UsersVM us)
         {
             var a = new User()
             {
@@ -49,7 +51,7 @@ namespace shop_giay.Services
             };
         }
 
-        public async Task<JsonResult> AdddUser(UsersVM usersVM, List<IFormFile> files)
+        public async Task<JsonResult> AdddUser(UsersSendMail usersVM, List<IFormFile> files)
         {
             int IdUser = usersVM.IdUser;
             string folder = "Users";
@@ -108,7 +110,7 @@ namespace shop_giay.Services
             
         }
 
-        public JsonResult EditData(int id, UsersViewModel us)
+        public JsonResult EditData(int id, UsersVM us)
         {
             var editUser = _context.Users.SingleOrDefault(l => l.IdUser == id);
             if(editUser == null)
@@ -132,11 +134,11 @@ namespace shop_giay.Services
             }
         }
 
-        public List<UsersViewModel> GetAll()
+        public List<UsersMD> GetAll()
         {
-            var users = _context.Users.Select(l => new UsersViewModel
+            var users = _context.Users.Select(l => new UsersMD
             {
-                
+                IdUser = l.IdUser,
                 TenUser = l.TenUser,
                 Email = l.Email,
                 Password = l.Password,

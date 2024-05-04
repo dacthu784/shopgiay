@@ -10,9 +10,7 @@ namespace shop_giay.ViewModel
 
         public int? ThuTuHienThi { get; set; }
 
-        public int? DanhSachCha { get; set; }
-
-        public int? DanhSachCon { get; set; }
+       
     }
     public class LoaiGiayMD:LoaiGiayVM
     {

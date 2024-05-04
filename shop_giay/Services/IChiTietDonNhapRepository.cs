@@ -93,6 +93,7 @@ namespace shop_giay.Services
         {
             var kq = _context.ChiTietDonNhaps.Select(o => new ChiTietDonNhapMD
             {
+                IdChiTietDonNhap = o.IdChiTietDonNhap,
               IdDonNhapHangHoa=o.IdDonNhapHangHoa,
               IdSanPham=o.IdSanPham,
               SoLuong=o.SoLuong,
