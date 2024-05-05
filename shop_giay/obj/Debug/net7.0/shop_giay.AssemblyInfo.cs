@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("shop_giay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< Updated upstream
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae0ae84427fcdfe3db6fa816baa2eb72d40c7b0c")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e470eb716275f016abb3d8cb57841e7ea5aff64")]
->>>>>>> Stashed changes
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6058e8aa8a021e25106659be7089fc84c5649438")]
 [assembly: System.Reflection.AssemblyProductAttribute("shop_giay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("shop_giay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

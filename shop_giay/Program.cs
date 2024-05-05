@@ -23,7 +23,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-<<<<<<< Updated upstream
+
 builder.Services.AddSwaggerGen(setup =>
 {
     // Include 'SecurityScheme' to use JWT Authentication
@@ -70,8 +70,7 @@ builder.Services.AddAuthentication(opt =>
             System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigningKey"]))
     };
 });
-=======
->>>>>>> Stashed changes
+
 
 builder.Services.AddAuthentication();
 builder.Services.AddDbContext<ShopGiayContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Dbcontext")));
@@ -87,31 +86,16 @@ builder.Services.AddScoped<IOderRepository, OderRepository>();
 builder.Services.AddScoped<IDonNhapHangHoaRepository, DonNhapHangHoaRepository>();
 builder.Services.AddScoped<IChiTietOrderRepository, ChiTietOrderRepository>();
 builder.Services.AddScoped<IChiTietDonNhapRepository, ChiTietDonNhapRepository>();
-<<<<<<< Updated upstream
+
 builder.Services.AddScoped<IAnhRepository, AnhRepository>();
 builder.Services.AddScoped<IHinhAnhUserRepository, HinhAnhUserRepository>();
 builder.Services.AddScoped<ITokenServices,TokenService >();
 builder.Services.AddScoped<PasswordHasher>();
-=======
+
 
 builder.Services.AddScoped<IAnhRepository, AnhRepository>();
 builder.Services.AddScoped<IHinhAnhUserRepository, HinhAnhUserRepository>();
 
-
-
-
-
-
-
-
-
->>>>>>> Stashed changes
-
-
-
-//builder.Services.AddScoped<ColorRecognition>;
-
-//ColorRecognition.Color();
 
 var app = builder.Build();
 

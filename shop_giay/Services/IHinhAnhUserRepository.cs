@@ -15,11 +15,8 @@ namespace shop_giay.Services
     {
         private readonly ShopGiayContext _context;
 
-<<<<<<< Updated upstream
-        public HinhAnhUserRepository(ShopGiayContext context)
-=======
-        HinhAnhUserRepository(ShopGiayContext context)
->>>>>>> Stashed changes
+
+        public HinhAnhUserRepository(ShopGiayContext context)     
         {
             _context = context;
         }
