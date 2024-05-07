@@ -9,11 +9,16 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = shop_giay
 build_property.RootNamespace = shop_giay
+<<<<<<< HEAD
+build_property.ProjectDir = D:\workspace_vsstudio\Back-end\shopgiay\shop_giay\
+build_property.RazorLangVersion = 7.0
+=======
 build_property.ProjectDir = C:\Users\PC\Desktop\shopgiay\shop_giay\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 2.1
+>>>>>>> 2d663735a9d084f24b10d11eee620d5f6fc7dd3d
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\PC\Desktop\shopgiay\shop_giay
+build_property.MSBuildProjectDirectory = D:\workspace_vsstudio\Back-end\shopgiay\shop_giay
 build_property._RazorSourceGeneratorDebug = 
