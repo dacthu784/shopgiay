@@ -19,7 +19,7 @@ namespace shop_giay.ViewModel
 
         public decimal? GiamGia { get; set; }
 
-        public int SoLuong { get; set; }
+        public int? SoLuong { get; set; }
     }
     public class SanPhamGiayMD:SanPhamGiayVM 
     {

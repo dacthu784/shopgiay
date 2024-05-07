@@ -8,8 +8,11 @@ namespace shop_giay.Services
     public interface ISanPhamGiayRepository
     {
         JsonResult AddSanPham(SanPhamGiayVM spg);
+        
         JsonResult DeleteSanPhamGiay(int id);
+       
         JsonResult EditSanPhamGiay(int id, SanPhamGiayVM spg);
+        
         List<SanPhamGiayMD> GetAll();
         public Task<SanPhamGiayMD> GetById(int id);
     }

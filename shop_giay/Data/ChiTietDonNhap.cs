@@ -19,7 +19,11 @@ public partial class ChiTietDonNhap
 
     public double? ThanhTien { get; set; }
 
+    public int? IdLoaiGiay { get; set; }
+
     public virtual DonNhapHangHoa? IdDonNhapHangHoaNavigation { get; set; }
+
+    public virtual LoaiGiay? IdLoaiGiayNavigation { get; set; }
 
     public virtual SanPhamGiay? IdSanPhamNavigation { get; set; }
 }

@@ -7,6 +7,7 @@ namespace shop_giay.ViewModel
 
     {
         public string? TenUser { get; set; }
+        public string? HoTen { get; set; }
 
         public string? Password { get; set; }
 
@@ -25,7 +26,7 @@ namespace shop_giay.ViewModel
 
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
-        public virtual ICollection<SanPhamYeuThich> SanPhamYeuThiches { get; set; } = new List<SanPhamYeuThich>();
+        public virtual ICollection<SanPhamYeuThichVM> SanPhamYeuThiches { get; set; } = new List<SanPhamYeuThichVM>();
     }
     public class UsersSendMail
     {
@@ -33,6 +34,37 @@ namespace shop_giay.ViewModel
 
         public string Email { get; set; }
 
+
+    }
+    public class Login
+    {
+        public string UserOrEmail { get; set; }
+
+        public string Password { get; set; }
+    }
+    public class DangKy
+    {
+       
+        public string Email { get; set; }
+        public string HoTen { get; set; }
+        public string TenUser { get; set; }
+
+        public string Password { get; set; }
+       
+        public string NhapLaiPassword { get; set; }
+    }
+    public class ChangePass
+    {
+
+        //public string Email { get; set; }
+        public string UserOrEmail { get; set; }
+        public string Password { get; set; }
+        public string DoiPassword { get; set; }
+        public string PasswordNhapLai { get; set; }
+    }
+    public class ResetPass
+    {
+        public string TenUser { get; set; }
 
     }
 }

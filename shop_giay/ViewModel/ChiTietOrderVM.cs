@@ -15,6 +15,8 @@ namespace shop_giay.ViewModel
         public string? Review { get; set; }
 
         public int? Idloai { get; set; }
+
+        public int? IdUser { get; set; }
     }
     public class ChiTietOrderMD:ChiTietOrderVM 
     {
@@ -26,6 +28,8 @@ namespace shop_giay.ViewModel
         public virtual Order IdOrderNavigation { get; set; } = null!;
 
         public virtual SanPhamGiay IdSanPhamNavigation { get; set; } = null!;
+
+        public virtual User? IdUserNavigation { get; set; }
 
         public virtual LoaiGiay? IdloaiNavigation { get; set; }
     }

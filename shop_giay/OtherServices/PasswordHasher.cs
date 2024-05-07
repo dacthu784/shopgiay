@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace shop_giay.OtherServices
 {
-    public  class PasswordHasher
+    public  class PasswordHasherServices
     {
         public static byte[] GetRandom(int value)
         {

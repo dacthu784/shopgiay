@@ -19,9 +19,13 @@ public partial class ChiTietOrder
 
     public int? Idloai { get; set; }
 
+    public int? IdUser { get; set; }
+
     public virtual Order IdOrderNavigation { get; set; } = null!;
 
     public virtual SanPhamGiay IdSanPhamNavigation { get; set; } = null!;
+
+    public virtual User? IdUserNavigation { get; set; }
 
     public virtual LoaiGiay? IdloaiNavigation { get; set; }
 }

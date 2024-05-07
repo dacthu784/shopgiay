@@ -33,11 +33,13 @@ public partial class ShopGiayContext : DbContext
 
     public virtual DbSet<Order> Orders { get; set; }
 
-    public virtual DbSet<ProductOption> ProductOptions { get; set; }
+    public virtual DbSet<ProductSizeQuantity> ProductSizeQuantities { get; set; }
 
     public virtual DbSet<SanPhamGiay> SanPhamGiays { get; set; }
 
     public virtual DbSet<SanPhamYeuThich> SanPhamYeuThiches { get; set; }
+
+    public virtual DbSet<Size> Sizes { get; set; }
 
     public virtual DbSet<TinhTrangDon> TinhTrangDons { get; set; }
 
@@ -45,7 +47,7 @@ public partial class ShopGiayContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=MSI\\SQLEXPRESS;Initial Catalog=ShopGiay;Integrated Security=True;Trust Server Certificate=True;");
+        => optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ShopGiay;Integrated Security=True;Trust Server Certificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -81,6 +83,10 @@ public partial class ShopGiayContext : DbContext
                 .HasForeignKey(d => d.IdDonNhapHangHoa)
                 .HasConstraintName("FK_ChiTietDonNhap_DonNhapHangHoa");
 
+            entity.HasOne(d => d.IdLoaiGiayNavigation).WithMany(p => p.ChiTietDonNhaps)
+                .HasForeignKey(d => d.IdLoaiGiay)
+                .HasConstraintName("FK_ChiTietDonNhap_LoaiGiay");
+
             entity.HasOne(d => d.IdSanPhamNavigation).WithMany(p => p.ChiTietDonNhaps)
                 .HasForeignKey(d => d.IdSanPham)
                 .HasConstraintName("FK_ChiTietDonNhap_Products");
@@ -96,7 +102,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.Property(e => e.IdOrder).ValueGeneratedOnAdd();
             entity.Property(e => e.Gia).HasColumnType("decimal(10, 2)");
-            entity.Property(e => e.Idloai).HasColumnName("idloai");
             entity.Property(e => e.Ratting)
                 .HasMaxLength(10)
                 .IsFixedLength();
@@ -113,6 +118,10 @@ public partial class ShopGiayContext : DbContext
                 .HasForeignKey(d => d.IdSanPham)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__OrderDeta__Produ__4E88ABD4");
+
+            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.ChiTietOrders)
+                .HasForeignKey(d => d.IdUser)
+                .HasConstraintName("FK_ChiTietOrders_Users");
 
             entity.HasOne(d => d.IdloaiNavigation).WithMany(p => p.ChiTietOrders)
                 .HasForeignKey(d => d.Idloai)
@@ -210,19 +219,21 @@ public partial class ShopGiayContext : DbContext
                 .HasConstraintName("FK__Orders__UserID__4AB81AF0");
         });
 
-        modelBuilder.Entity<ProductOption>(entity =>
+        modelBuilder.Entity<ProductSizeQuantity>(entity =>
         {
-            entity.HasKey(e => e.OptionId).HasName("PK__ProductO__92C7A1DF63CA3D93");
+            entity.HasKey(e => e.IdSizeQuanltity);
 
-            entity.Property(e => e.OptionId).HasColumnName("OptionID");
-            entity.Property(e => e.OptionName).HasMaxLength(100);
-            entity.Property(e => e.OptionValue).HasMaxLength(255);
-            entity.Property(e => e.ProductId).HasColumnName("ProductID");
+            entity.ToTable("ProductSizeQuantity");
 
-            entity.HasOne(d => d.Product).WithMany(p => p.ProductOptions)
-                .HasForeignKey(d => d.ProductId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProductOp__Produ__4F47C5E3");
+            entity.Property(e => e.IdSizeQuanltity).ValueGeneratedNever();
+
+            entity.HasOne(d => d.IdSanPhamGiayNavigation).WithMany(p => p.ProductSizeQuantities)
+                .HasForeignKey(d => d.IdSanPhamGiay)
+                .HasConstraintName("FK_ProductSizeQuantity_SanPhamGiay");
+
+            entity.HasOne(d => d.IdSizeNavigation).WithMany(p => p.ProductSizeQuantities)
+                .HasForeignKey(d => d.IdSize)
+                .HasConstraintName("FK_ProductSizeQuantity_Sizes");
         });
 
         modelBuilder.Entity<SanPhamGiay>(entity =>
@@ -247,24 +258,28 @@ public partial class ShopGiayContext : DbContext
 
         modelBuilder.Entity<SanPhamYeuThich>(entity =>
         {
-            entity.HasKey(e => e.IdSanPhamYeuThich).HasName("PK__SanPhamY__30406ADED121AE83");
+            entity.HasKey(e => e.IdSanPhamYeuThich).HasName("PK__SanPhamY__30406ADE03F38817");
 
             entity.ToTable("SanPhamYeuThich");
 
-            entity.Property(e => e.AddedDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
-            entity.Property(e => e.IdsanPham).HasColumnName("IDSanPham");
+            entity.Property(e => e.IdSanPhamYeuThich).ValueGeneratedNever();
+            entity.Property(e => e.AddedDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.IdSanPhamNavigation).WithMany(p => p.SanPhamYeuThiches)
+                .HasForeignKey(d => d.IdSanPham)
+                .HasConstraintName("FK_SanPhamYeuThich_ProductSizeQuantity");
 
             entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.SanPhamYeuThiches)
                 .HasForeignKey(d => d.IdUser)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__SanPhamYe__IdUse__5CA1C101");
+                .HasConstraintName("FK__SanPhamYe__IdUse__0880433F");
+        });
 
-            entity.HasOne(d => d.IdsanPhamNavigation).WithMany(p => p.SanPhamYeuThiches)
-                .HasForeignKey(d => d.IdsanPham)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__SanPhamYe__IDSan__5D95E53A");
+        modelBuilder.Entity<Size>(entity =>
+        {
+            entity.HasKey(e => e.IdSize);
+
+            entity.Property(e => e.IdSize).ValueGeneratedNever();
+            entity.Property(e => e.Size1).HasColumnName("Size");
         });
 
         modelBuilder.Entity<TinhTrangDon>(entity =>

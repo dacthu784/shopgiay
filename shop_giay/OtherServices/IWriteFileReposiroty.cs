@@ -2,11 +2,11 @@
 {
     public interface IWriteFileRepository
     {
-        Task<List<string>> WriteFileAsync(List<IFormFile> files, string folder);
+        List<string> WriteFile(List<IFormFile> files, string folder);
     }
     public class WriteFileRepository : IWriteFileRepository
     {
-        public async Task<List<string>> WriteFileAsync(List<IFormFile> files, string folder = null)
+        public List<string> WriteFile(List<IFormFile> files, string folder = null)
         {
             string local;
 
@@ -44,7 +44,7 @@
 
                     var stream = new FileStream(exactpath, FileMode.Create);
 
-                    await file.CopyToAsync(stream);
+                    file.CopyTo(stream);
 
                     stream.Close();
 
