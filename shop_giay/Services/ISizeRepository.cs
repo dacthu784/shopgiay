@@ -6,9 +6,9 @@ namespace shop_giay.Services
 {
     public interface ISizeRepository
     {
-        JsonResult? AddSize(SizeVM size);
-        JsonResult? DeleteSize(int id);
-        JsonResult? EditSize(int id, SizeVM size);
+        JsonResult AddSize(SizeVM size);
+        JsonResult   DeleteSize(int id);
+        JsonResult EditSize(int id, SizeVM size);
         List<SizeMD> GetAll();
     }
     public class SizeRepository : ISizeRepository
@@ -20,7 +20,7 @@ namespace shop_giay.Services
             _context = context;
         }
 
-        public JsonResult? AddSize(SizeVM size)
+        public JsonResult AddSize(SizeVM size)
         {
             var a = new Size()
             {
@@ -55,7 +55,7 @@ namespace shop_giay.Services
             }
         }
 
-        public JsonResult? EditSize(int id, SizeVM size)
+        public JsonResult EditSize(int id, SizeVM size)
         {
             var Editsize = _context.Sizes.SingleOrDefault(l => l.IdSize == id);
             if (Editsize == null)
