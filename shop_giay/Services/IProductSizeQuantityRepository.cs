@@ -6,9 +6,9 @@ namespace shop_giay.Services
 {
     public interface IProductSizeQuantityRepository
     {
-        JsonResult? AddProDuctSizeQuantity(ProductSizeQuantityMD pds);
-        JsonResult? DeleteProDuctSizeQuantity(int id);
-        JsonResult? EditProDuctSizeQuantity(ProductSizeQuantityVM pds);
+        JsonResult AddProDuctSizeQuantity(ProductSizeQuantityMD pds);
+        JsonResult DeleteProDuctSizeQuantity(int id);
+        JsonResult EditProDuctSizeQuantity(int id, ProductSizeQuantityVM pds);
         List<ProductSizeQuantityMD> GetAll();
     }
     public class ProductSizeQuantityRepository : IProductSizeQuantityRepository
@@ -20,7 +20,7 @@ namespace shop_giay.Services
             _context = context;
         }
 
-        public JsonResult? AddProDuctSizeQuantity(ProductSizeQuantityMD pds)
+        public JsonResult AddProDuctSizeQuantity(ProductSizeQuantityMD pds)
         {
             var a = new ProductSizeQuantity()
             {
@@ -35,7 +35,7 @@ namespace shop_giay.Services
             };
         }
 
-        public JsonResult? DeleteProDuctSizeQuantity(int id)
+        public JsonResult DeleteProDuctSizeQuantity(int id)
         {
             var a = _context.ProductSizeQuantities.SingleOrDefault(l => l.IdSizeQuanltity == id);
             if (a != null)
@@ -56,7 +56,7 @@ namespace shop_giay.Services
             }
         }
 
-        public JsonResult? EditProDuctSizeQuantity(ProductSizeQuantityVM pds)
+        public JsonResult EditProDuctSizeQuantity(int id, ProductSizeQuantityVM pds)
         {
             var Editpds = _context.ProductSizeQuantities.SingleOrDefault(l => l.IdSizeQuanltity == id);
             if (Editpds == null)

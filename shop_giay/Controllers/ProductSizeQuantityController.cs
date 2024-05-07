@@ -30,7 +30,7 @@ namespace shop_giay.Controllers
         [HttpPut("EditProDuctSizeQuantity")]
         public IActionResult EditProDuctSizeQuantity(int id, ProductSizeQuantityVM pds)
         {
-            return Ok(_productSizeQuantityRepository.EditProDuctSizeQuantity(pds));
+            return Ok(_productSizeQuantityRepository.EditProDuctSizeQuantity(id, pds));
         }
         [HttpDelete("DeleteProDuctSizeQuantity")]
         public IActionResult DeleteProDuctSizeQuantity(int id)
