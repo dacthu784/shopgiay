@@ -85,6 +85,12 @@ builder.Services.AddScoped<IDonNhapHangHoaRepository, DonNhapHangHoaRepository>(
 builder.Services.AddScoped<IChiTietOrderRepository, ChiTietOrderRepository>();
 builder.Services.AddScoped<IChiTietDonNhapRepository, ChiTietDonNhapRepository>();
 builder.Services.AddScoped<ISanPhamYeuThichRepository, SanPhamYeuThichRepository>();
+builder.Services.AddScoped<ISizeRepository, SizeRepository>();
+builder.Services.AddScoped<IProductSizeQuantityRepository, ProductSizeQuantityRepository>();
+
+
+
+
 
 builder.Services.AddScoped<IAnhRepository, AnhRepository>();
 builder.Services.AddScoped<IHinhAnhUserRepository, HinhAnhUserRepository>();
@@ -94,6 +100,7 @@ builder.Services.AddScoped<PasswordHasherServices>();
 
 builder.Services.AddScoped<IAnhRepository, AnhRepository>();
 builder.Services.AddScoped<IHinhAnhUserRepository, HinhAnhUserRepository>();
+
 
 
 var app = builder.Build();
