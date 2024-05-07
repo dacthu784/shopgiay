@@ -23,6 +23,8 @@ public partial class User
 
     public DateTime? NgaySua { get; set; }
 
+    public virtual ICollection<ChiTietOrder> ChiTietOrders { get; set; } = new List<ChiTietOrder>();
+
     public virtual ICollection<HinhAnhUser> HinhAnhUsers { get; set; } = new List<HinhAnhUser>();
 
     public virtual LoaiUser IdLoaiUsersNavigation { get; set; } = null!;

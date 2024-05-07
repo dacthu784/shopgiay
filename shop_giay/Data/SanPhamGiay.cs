@@ -17,7 +17,7 @@ public partial class SanPhamGiay
 
     public decimal? GiamGia { get; set; }
 
-    public int SoLuong { get; set; }
+    public int? SoLuong { get; set; }
 
     public virtual ICollection<Anh> Anhs { get; set; } = new List<Anh>();
 
@@ -27,7 +27,5 @@ public partial class SanPhamGiay
 
     public virtual LoaiGiay? IdLoaiGiayNavigation { get; set; }
 
-    public virtual ICollection<ProductOption> ProductOptions { get; set; } = new List<ProductOption>();
-
-    public virtual ICollection<SanPhamYeuThich> SanPhamYeuThiches { get; set; } = new List<SanPhamYeuThich>();
+    public virtual ICollection<ProductSizeQuantity> ProductSizeQuantities { get; set; } = new List<ProductSizeQuantity>();
 }

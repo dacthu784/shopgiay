@@ -8,7 +8,6 @@ using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
 using MimeKit.Text;
-
 using shop_giay.Services;
 using shop_giay.OtherServices;
 using Microsoft.OpenApi.Models;
@@ -61,11 +60,10 @@ builder.Services.AddAuthentication(opt =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateIssuer = true,
-        ValidIssuer = builder.Configuration["JWT:Issuer"],
-        ValidateAudience = true,
-        ValidAudience = builder.Configuration["JWT:Audience"],
-        ValidateIssuerSigningKey = true,
+        ValidateIssuerSigningKey = true, 
+        ValidateAudience = false, 
+        ValidateIssuer = false, 
+
         IssuerSigningKey = new SymmetricSecurityKey(
             System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigningKey"]))
     };
@@ -86,11 +84,12 @@ builder.Services.AddScoped<IOderRepository, OderRepository>();
 builder.Services.AddScoped<IDonNhapHangHoaRepository, DonNhapHangHoaRepository>();
 builder.Services.AddScoped<IChiTietOrderRepository, ChiTietOrderRepository>();
 builder.Services.AddScoped<IChiTietDonNhapRepository, ChiTietDonNhapRepository>();
+builder.Services.AddScoped<ISanPhamYeuThichRepository, SanPhamYeuThichRepository>();
 
 builder.Services.AddScoped<IAnhRepository, AnhRepository>();
 builder.Services.AddScoped<IHinhAnhUserRepository, HinhAnhUserRepository>();
 builder.Services.AddScoped<ITokenServices,TokenService >();
-builder.Services.AddScoped<PasswordHasher>();
+builder.Services.AddScoped<PasswordHasherServices>();
 
 
 builder.Services.AddScoped<IAnhRepository, AnhRepository>();

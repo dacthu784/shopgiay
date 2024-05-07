@@ -656,6 +656,84 @@
     ]
   },
   {
+    "ContainingType": "shop_giay.Controllers.SanPhamYeuThichController",
+    "Method": "AddSanPhamYeuThich",
+    "RelativePath": "api/SanPhamYeuThich/AddSanPhamYeuThich",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdUser",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "IdsanPham",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AddedDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChoPhepGuiEmail",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SanPhamYeuThichController",
+    "Method": "DeleteSanPhamYeuThich",
+    "RelativePath": "api/SanPhamYeuThich/DeleteSanPhamYeuThich",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SanPhamYeuThichController",
+    "Method": "EditSanPhamYeuThich",
+    "RelativePath": "api/SanPhamYeuThich/EditSanPhamYeuThich",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "sanPhamYeuThich",
+        "Type": "shop_giay.ViewModel.SanPhamYeuThichVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SanPhamYeuThichController",
+    "Method": "GetAll",
+    "RelativePath": "api/SanPhamYeuThich/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "shop_giay.Controllers.TinhTrangDonController",
     "Method": "AddTinhTrangDon",
     "RelativePath": "api/TinhTrangDon/AddTinhTrangDon",
@@ -762,6 +840,58 @@
   },
   {
     "ContainingType": "shop_giay.Controllers.UserController",
+    "Method": "ChangePass",
+    "RelativePath": "api/User/ChangePass",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changePass",
+        "Type": "shop_giay.ViewModel.ChangePass",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.UserController",
+    "Method": "DangKy",
+    "RelativePath": "api/User/DangKy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "HoTen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenUser",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NhapLaiPassword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.UserController",
     "Method": "DeleteData",
     "RelativePath": "api/User/DeleteData",
     "HttpMethod": "DELETE",
@@ -804,7 +934,86 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "IsDecsending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.UserController",
+    "Method": "GetByInfo",
+    "RelativePath": "api/User/GetByInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.UserController",
+    "Method": "ActionLogin",
+    "RelativePath": "api/User/login",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserOrEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.UserController",
+    "Method": "ResetPass",
+    "RelativePath": "api/User/ResetPass",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   }
 ]

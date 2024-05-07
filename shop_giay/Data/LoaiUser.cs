@@ -9,7 +9,7 @@ public partial class LoaiUser
 
     public string? MaLoai { get; set; }
 
-    public string TenLoai { get; set; } = null!;
+    public string? TenLoai { get; set; }
 
     public virtual ICollection<User> Users { get; set; } = new List<User>();
 }

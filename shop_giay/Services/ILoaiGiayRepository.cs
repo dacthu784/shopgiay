@@ -17,9 +17,9 @@ namespace shop_giay.Services
         private readonly ShopGiayContext _context;
 
         public LoaiGiayRepo(ShopGiayContext context)
-    {
+        {
             _context = context;
-    }
+        }
 
         public JsonResult AddLoaigiay(LoaiGiayVM loaigiay)
         {
