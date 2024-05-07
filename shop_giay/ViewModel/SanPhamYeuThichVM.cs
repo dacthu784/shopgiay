@@ -17,8 +17,8 @@ namespace shop_giay.ViewModel
     public class SanPhamYeuThichMD : SanPhamGiayVM
     {
         public int IdSanPhamYeuThich { get; set; }
-        public virtual User IdUserNavigation { get; set; } = null!;
+        public virtual User? IdUserNavigation { get; set; } = null!;
 
-        public virtual SanPhamGiay IdsanPhamNavigation { get; set; } = null!;
+        public virtual ProductSizeQuantity? IdSanPhamNavigation { get; set; }
     }
 }
