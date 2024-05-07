@@ -66,12 +66,39 @@ namespace shop_giay.Services
 
         public JsonResult EditSanPhamYeuThich(int id, SanPhamYeuThichVM sanPhamYeuThich)
         {
-            throw new NotImplementedException();
+            var EditSanPhamYeuThich = _context.SanPhamYeuThiches.SingleOrDefault(l => l.IdSanPhamYeuThich == id);
+            if (EditSanPhamYeuThich == null)
+            {
+                return new JsonResult("Khong tim thay san pham yeu thich")
+                {
+                    StatusCode = StatusCodes.Status404NotFound
+                };
+            }
+            else
+            {
+                EditSanPhamYeuThich.IdUser = sanPhamYeuThich.IdUser;
+                EditSanPhamYeuThich.IdSanPham = sanPhamYeuThich.IdsanPham;
+                EditSanPhamYeuThich.ChoPhepGuiEmail = sanPhamYeuThich.ChoPhepGuiEmail;
+
+
+                _context.SaveChanges();
+                return new JsonResult("Edit thanh cong")
+                {
+                    StatusCode = StatusCodes.Status200OK
+                };
+            }
         }
 
         public List<SanPhamYeuThichMD> GetAll()
         {
-            throw new NotImplementedException();
+            var kq = _context.SanPhamYeuThiches.Select(o => new SanPhamYeuThichMD
+            {
+                IdSanPhamYeuThich=o.IdSanPhamYeuThich,
+                IdUserNavigation=o.IdUserNavigation,
+                IdSanPhamNavigation=o.IdSanPhamNavigation,
+              
+            }).ToList();
+            return kq;
         }
     }
 }
