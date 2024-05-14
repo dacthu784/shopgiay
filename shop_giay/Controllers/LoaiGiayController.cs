@@ -21,6 +21,11 @@ namespace shop_giay.Controllers
         {
             return Ok(_loaiGiayRepo.GetAll());
         }
+        [HttpGet("GetAllSP")]
+        public IActionResult GetAllSP()
+        {
+            return Ok(_loaiGiayRepo.GetAllSP());
+        }
         [HttpPost("AddLoaiGiay")]
         public IActionResult AddLoaiGiay(LoaiGiayVM loaigiay)
         {
@@ -36,6 +41,10 @@ namespace shop_giay.Controllers
         {
             return Ok(_loaiGiayRepo.DeleteLoaiGiay(id));
         }
-
+        [HttpGet(" TinhTong")]
+        public IActionResult TinhTong()
+        {
+            return Ok(_loaiGiayRepo.TinhTong());
+        }
     }
 }

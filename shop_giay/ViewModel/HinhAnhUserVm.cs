@@ -18,4 +18,13 @@ namespace shop_giay.ViewModel
 
         public virtual User? IduserNavigation { get; set; }
     }
+    public class HinhAnhUserLuuAnh
+    {
+
+       
+
+        public string? Urlimage { get; set; }
+
+        public bool? Isavarta { get; set; }
+    }
 }

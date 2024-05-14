@@ -10,7 +10,7 @@ namespace shop_giay.ViewModel
 
         public decimal? Gia { get; set; }
 
-        public string? Ratting { get; set; }
+        public int? Ratting { get; set; }
 
         public string? Review { get; set; }
 
@@ -32,5 +32,19 @@ namespace shop_giay.ViewModel
         public virtual User? IdUserNavigation { get; set; }
 
         public virtual LoaiGiay? IdloaiNavigation { get; set; }
+    }
+    public class Danhgia
+    {
+       
+
+       
+
+        public int? Ratting { get; set; }
+
+        public string? Review { get; set; }
+
+      
+
+        public int? IdUser { get; set; }
     }
 }

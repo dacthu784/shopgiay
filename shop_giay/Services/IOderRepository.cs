@@ -23,11 +23,12 @@ namespace shop_giay.Services
 
         public JsonResult AddOrder(OrderVM odr)
         {
+           var tong = _context.ChiTietOrders.Where(w => w.IdOrder == odr.IdOrder).Sum(t => t.Gia);
              var a = new Order()
             {
               IdUser=odr.IdUser,
-              NgayOrder=odr.NgayOrder,
-              TongTien=odr.TongTien,
+              NgayOrder=DateTime.Now,
+              TongTien=tong
             };
             _context.Orders.Add(a);
             _context.SaveChanges();

@@ -316,6 +316,16 @@
   },
   {
     "ContainingType": "shop_giay.Controllers.LoaiGiayController",
+    "Method": "TinhTong",
+    "RelativePath": "api/LoaiGiay/ TinhTong",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.LoaiGiayController",
     "Method": "AddLoaiGiay",
     "RelativePath": "api/LoaiGiay/AddLoaiGiay",
     "HttpMethod": "POST",
@@ -371,6 +381,16 @@
     "ContainingType": "shop_giay.Controllers.LoaiGiayController",
     "Method": "GetAll",
     "RelativePath": "api/LoaiGiay/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.LoaiGiayController",
+    "Method": "GetAllSP",
+    "RelativePath": "api/LoaiGiay/GetAllSP",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -567,6 +587,90 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "shop_giay.Controllers.ProductSizeQuantityController",
+    "Method": "AddProDuctSizeQuantity",
+    "RelativePath": "api/ProductSizeQuantity/AddProDuctSizeQuantity",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pds",
+        "Type": "shop_giay.ViewModel.ProductSizeQuantityVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.ProductSizeQuantityController",
+    "Method": "DeleteProDuctSizeQuantity",
+    "RelativePath": "api/ProductSizeQuantity/DeleteProDuctSizeQuantity",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.ProductSizeQuantityController",
+    "Method": "EditProDuctSizeQuantity",
+    "RelativePath": "api/ProductSizeQuantity/EditProDuctSizeQuantity",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pds",
+        "Type": "shop_giay.ViewModel.ProductSizeQuantityVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.ProductSizeQuantityController",
+    "Method": "GetAll",
+    "RelativePath": "api/ProductSizeQuantity/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SanPhamGiayController",
+    "Method": "AddAnhSanPhamGiay",
+    "RelativePath": "api/SanPhamGiay/AddAnhSanPhamGiay",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "files",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "shop_giay.Controllers.SanPhamGiayController",
     "Method": "AddSanPhamGiay",
     "RelativePath": "api/SanPhamGiay/AddSanPhamGiay",
@@ -626,7 +730,28 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "IsDecsending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "option",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -656,6 +781,22 @@
     ]
   },
   {
+    "ContainingType": "shop_giay.Controllers.SanPhamGiayController",
+    "Method": "GetByName",
+    "RelativePath": "api/SanPhamGiay/GetByName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "shop_giay.Controllers.SanPhamYeuThichController",
     "Method": "AddSanPhamYeuThich",
     "RelativePath": "api/SanPhamYeuThich/AddSanPhamYeuThich",
@@ -670,7 +811,7 @@
       },
       {
         "Name": "IdsanPham",
-        "Type": "System.Int32",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -727,6 +868,69 @@
     "ContainingType": "shop_giay.Controllers.SanPhamYeuThichController",
     "Method": "GetAll",
     "RelativePath": "api/SanPhamYeuThich/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SizeController",
+    "Method": "AddSize",
+    "RelativePath": "api/Size/AddSize",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "size",
+        "Type": "shop_giay.ViewModel.SizeVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SizeController",
+    "Method": "DeleteSize",
+    "RelativePath": "api/Size/DeleteSize",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SizeController",
+    "Method": "EditSize",
+    "RelativePath": "api/Size/EditSize",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "shop_giay.ViewModel.SizeVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.SizeController",
+    "Method": "GetAll",
+    "RelativePath": "api/Size/GetAll",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -794,6 +998,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "shop_giay.Controllers.UserController",
+    "Method": "EditForUser",
+    "RelativePath": "api/User/ EditForUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "us",
+        "Type": "shop_giay.ViewModel.EditForUser",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -909,7 +1129,7 @@
   {
     "ContainingType": "shop_giay.Controllers.UserController",
     "Method": "EditData",
-    "RelativePath": "api/User/EditData,{id}",
+    "RelativePath": "api/User/EditData",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -917,7 +1137,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "us",
@@ -983,7 +1203,7 @@
     "ContainingType": "shop_giay.Controllers.UserController",
     "Method": "ActionLogin",
     "RelativePath": "api/User/login",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

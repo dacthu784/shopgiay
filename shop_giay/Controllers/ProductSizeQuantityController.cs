@@ -23,7 +23,7 @@ namespace shop_giay.Controllers
             return Ok(_productSizeQuantityRepository.GetAll());
         }
         [HttpPost("AddProDuctSizeQuantity")]
-        public IActionResult AddProDuctSizeQuantity(ProductSizeQuantityMD pds)
+        public IActionResult AddProDuctSizeQuantity(ProductSizeQuantityVM pds)
         {
             return Ok(_productSizeQuantityRepository.AddProDuctSizeQuantity(pds));
         }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Serilog;
+using shop_giay.Extension;
 using shop_giay.Helper;
 using shop_giay.OtherServices;
 using shop_giay.Services;
@@ -36,7 +37,7 @@ namespace shop_giay.Controllers
         {
             return Ok(_UsersRepo.AddData(us));
         }
-        [HttpPut("EditData,{id:int}")]
+        [HttpPut("EditData")] //,{id:int}
         [Authorize(Roles = "1")]
         public IActionResult EditData(int id, UsersVM us)
         {
@@ -48,7 +49,7 @@ namespace shop_giay.Controllers
         {
             return Ok(_UsersRepo.DeleteData(id));
         }
-        [HttpGet("login")]
+        [HttpPost("login")]
         public async Task<IActionResult> ActionLogin([FromQuery] Login login)
         {
             return Ok(_UsersRepo.ActionLogin(login));
@@ -81,6 +82,14 @@ namespace shop_giay.Controllers
         {
             return Ok(_UsersRepo.GetByInfo(info));
 
+        }
+        [HttpPut(" EditForUser")] //,{id:int}
+        [Authorize(Roles = "2")]
+        public IActionResult EditForUser( EditForUser us)
+        {
+            var id = User.GetId();
+            var doi = int.Parse(id);
+            return Ok(_UsersRepo.EditForUser( doi,us));
         }
     }
 }

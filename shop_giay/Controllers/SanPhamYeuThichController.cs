@@ -24,12 +24,15 @@ namespace shop_giay.Controllers
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            return Ok(_sanPhamYeuThichrepository.GetAll());
+            var id = User.GetId();
+            var doi = int.Parse(id);
+            return Ok(_sanPhamYeuThichrepository.GetAll(doi));
         }
         [HttpPost("AddSanPhamYeuThich")]
         [Authorize(Roles ="2")]
         public IActionResult AddSanPhamYeuThich([FromQuery]SanPhamYeuThichVM sanPhamYeuThich)
         {
+
             var id = User.GetId();
             var doi = int.Parse(id);
             sanPhamYeuThich.IdUser = doi;
@@ -38,16 +41,28 @@ namespace shop_giay.Controllers
         [HttpPut("EditSanPhamYeuThich")]
         public IActionResult EditSanPhamYeuThich(int id, SanPhamYeuThichVM sanPhamYeuThich)
         {
+            var iduser = User.GetId();
+            var doi = int.Parse(iduser);
+            sanPhamYeuThich.IdUser = doi;
             return Ok(_sanPhamYeuThichrepository.EditSanPhamYeuThich(id, sanPhamYeuThich));
         }
         [HttpDelete("DeleteSanPhamYeuThich")]
         [Authorize(Roles = "2")]
         public IActionResult DeleteSanPhamYeuThich(int id)
         {
+           
             var iduser = User.GetId();
             var doi = int.Parse(iduser);
             
-            return Ok(_sanPhamYeuThichrepository.DeleteSanPhamYeuThich(id));
+            return Ok(_sanPhamYeuThichrepository.DeleteSanPhamYeuThich(id,doi));
+        }
+        [HttpPost("Sendemail")]
+        //[Authorize(Roles = "2")]
+        public IActionResult SendEmail()
+        {
+
+            
+            return Ok(_sanPhamYeuThichrepository.SendEmail());
         }
     }
 }

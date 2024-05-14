@@ -17,7 +17,7 @@ public partial class SanPhamGiay
 
     public decimal? GiamGia { get; set; }
 
-    public int? SoLuong { get; set; }
+    public int? SoLuong { get; set; } = 0;
 
     public virtual ICollection<Anh> Anhs { get; set; } = new List<Anh>();
 

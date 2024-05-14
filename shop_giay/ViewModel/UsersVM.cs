@@ -1,4 +1,6 @@
-﻿using shop_giay.Data;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using shop_giay.Data;
+using System.ComponentModel.DataAnnotations;
 
 namespace shop_giay.ViewModel
 {
@@ -10,12 +12,17 @@ namespace shop_giay.ViewModel
         public string? HoTen { get; set; }
 
         public string? Password { get; set; }
-
+        [EmailAddress]
         public string? Email { get; set; }
 
         public string? DiaChi { get; set; }
 
         public int IdLoaiUsers { get; set; }
+        [BindNever]
+        public DateTime? NgayTao { get; set; }
+        [BindNever]
+
+        public DateTime? NgaySua { get; set; }
     }
     public class UsersMD : UsersVM
     {
@@ -32,6 +39,7 @@ namespace shop_giay.ViewModel
     {
         public int IdUser { get; set; }
 
+        [EmailAddress]
         public string Email { get; set; }
 
 
@@ -44,7 +52,7 @@ namespace shop_giay.ViewModel
     }
     public class DangKy
     {
-       
+        [EmailAddress]
         public string Email { get; set; }
         public string HoTen { get; set; }
         public string TenUser { get; set; }
@@ -66,5 +74,51 @@ namespace shop_giay.ViewModel
     {
         public string TenUser { get; set; }
 
+    }
+    public class UsersHienAnh
+
+    {
+        public int IdUser { get; set; }
+        public string? TenUser { get; set; }
+        public string? HoTen { get; set; }
+
+        public string? Password { get; set; }
+        [EmailAddress]
+        public string? Email { get; set; }
+
+        public string? DiaChi { get; set; }
+
+        public int IdLoaiUsers { get; set; }
+        public DateTime? NgayTao { get; set; }
+
+        public DateTime? NgaySua { get; set; }
+       
+        public virtual ICollection<HinhAnhUserLuuAnh> HinhAnhUsers { get; set; } = new List<HinhAnhUserLuuAnh>();
+
+    }
+    public class EditForUser
+
+    {
+       
+        public string? HoTen { get; set; }
+
+        [EmailAddress]
+
+        public string? Email { get; set; }
+
+        public string? DiaChi { get; set; }
+
+       
+        public DateTime? NgayTao { get; set; }
+
+        public DateTime? NgaySua { get; set; }
+    }
+    public class XemChiTietOrder
+
+    {
+        public string? TenUser { get; set; }
+        public string? HoTen { get; set; }
+
+   
     }
 }

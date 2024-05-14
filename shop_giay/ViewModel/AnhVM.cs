@@ -16,4 +16,10 @@ namespace shop_giay.ViewModel
 
         public virtual SanPhamGiay? IdsanphamNavigation { get; set; }
     }
+    public class HienAnh
+    {
+        public string? Url { get; set; }
+
+      
+    }
 }

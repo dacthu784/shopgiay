@@ -102,9 +102,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.Property(e => e.IdOrder).ValueGeneratedOnAdd();
             entity.Property(e => e.Gia).HasColumnType("decimal(10, 2)");
-            entity.Property(e => e.Ratting)
-                .HasMaxLength(10)
-                .IsFixedLength();
             entity.Property(e => e.Review)
                 .HasMaxLength(10)
                 .IsFixedLength();
@@ -225,8 +222,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.ToTable("ProductSizeQuantity");
 
-            entity.Property(e => e.IdSizeQuanltity).ValueGeneratedNever();
-
             entity.HasOne(d => d.IdSanPhamGiayNavigation).WithMany(p => p.ProductSizeQuantities)
                 .HasForeignKey(d => d.IdSanPhamGiay)
                 .HasConstraintName("FK_ProductSizeQuantity_SanPhamGiay");
@@ -262,7 +257,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.ToTable("SanPhamYeuThich");
 
-            entity.Property(e => e.IdSanPhamYeuThich).ValueGeneratedNever();
             entity.Property(e => e.AddedDate).HasColumnType("datetime");
 
             entity.HasOne(d => d.IdSanPhamNavigation).WithMany(p => p.SanPhamYeuThiches)
@@ -278,7 +272,6 @@ public partial class ShopGiayContext : DbContext
         {
             entity.HasKey(e => e.IdSize);
 
-            entity.Property(e => e.IdSize).ValueGeneratedNever();
             entity.Property(e => e.Size1).HasColumnName("Size");
         });
 

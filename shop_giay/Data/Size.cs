@@ -7,7 +7,7 @@ public partial class Size
 {
     public int IdSize { get; set; }
 
-    public int? Size1 { get; set; }
+    public int? Size { get; set; }
 
     public virtual ICollection<ProductSizeQuantity> ProductSizeQuantities { get; set; } = new List<ProductSizeQuantity>();
 }

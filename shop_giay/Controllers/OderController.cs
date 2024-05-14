@@ -36,5 +36,6 @@ namespace shop_giay.Controllers
         {
             return Ok(_oderRepo.DeleteLoaiUser(id));
         }
+        
     }
 }

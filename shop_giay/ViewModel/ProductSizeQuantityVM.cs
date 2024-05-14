@@ -10,7 +10,10 @@ namespace shop_giay.ViewModel
 
         public int? IdSize { get; set; }
 
+        public int? SoLuong { get; set; }
+
       
+
     }
     public class ProductSizeQuantityMD: ProductSizeQuantityVM
     {
