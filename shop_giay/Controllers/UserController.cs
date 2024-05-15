@@ -12,7 +12,7 @@ using shop_giay.ViewModel;
 namespace shop_giay.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+   
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _UsersRepo;
@@ -22,40 +22,49 @@ namespace shop_giay.Controllers
             _UsersRepo = UsersRepo;
         }
         [HttpPost("AddUser")]
-        public IActionResult AdddUser([FromForm] UsersSendMail users , List<IFormFile> files)
+        [Authorize(Roles = "1,2,3")]
+        public IActionResult AdddUser( List<IFormFile> files)
         {
-            return Ok(_UsersRepo.AdddUser(users, files));
+            var id = User.GetId();
+            var doi = int.Parse(id);
+            return Ok(_UsersRepo.AdddUser(doi, files));
         }
         [HttpGet("GetAll")]
+        [Authorize(Roles = "1")]
         public IActionResult GetAll([FromQuery] QueryObject queryObjec)
         {
             return Ok(_UsersRepo.GetAll(queryObjec));
         }
         [HttpPost("AddData")]
-        
+        [Authorize(Roles = "1")]
+
         public IActionResult AddData(UsersVM us)
         {
             return Ok(_UsersRepo.AddData(us));
         }
         [HttpPut("EditData")] //,{id:int}
         [Authorize(Roles = "1")]
+
         public IActionResult EditData(int id, UsersVM us)
         {
             return Ok(_UsersRepo.EditData(id,us));
         }
         [HttpDelete("DeleteData")]
         [Authorize(Roles = "1")]
+
         public IActionResult DeleteData(int id)
         {
             return Ok(_UsersRepo.DeleteData(id));
         }
         [HttpPost("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> ActionLogin([FromQuery] Login login)
         {
             return Ok(_UsersRepo.ActionLogin(login));
            
         }
         [HttpPost("DangKy")]
+        [AllowAnonymous]
         public async Task<IActionResult> DangKy([FromQuery] DangKy dangKy)
         {
             return Ok(_UsersRepo.DangKy(dangKy));
@@ -64,6 +73,7 @@ namespace shop_giay.Controllers
             
         }
         [HttpPut("ChangePass")]
+        [AllowAnonymous]
         public async Task<IActionResult> ChangePass(ChangePass changePass)
         {
             return Ok(_UsersRepo.ChangePass(changePass));
@@ -84,7 +94,7 @@ namespace shop_giay.Controllers
 
         }
         [HttpPut(" EditForUser")] //,{id:int}
-        [Authorize(Roles = "2")]
+        [Authorize(Roles ="1,2,3")]
         public IActionResult EditForUser( EditForUser us)
         {
             var id = User.GetId();

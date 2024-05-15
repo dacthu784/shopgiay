@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using shop_giay.Helper;
 using shop_giay.Services;
@@ -8,6 +9,7 @@ namespace shop_giay.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "1,3")]
     public class SanPhamGiayController : ControllerBase
     {
         private readonly ISanPhamGiayRepository _SanPhamGiayRepo;
@@ -18,6 +20,7 @@ namespace shop_giay.Controllers
         }
 
         [HttpGet("GetAll")]
+        [AllowAnonymous]
         public IActionResult GetAll([FromQuery]QueryObject queryObject, string? option)
         {
             return Ok(_SanPhamGiayRepo.GetAll(queryObject,option));
@@ -39,6 +42,7 @@ namespace shop_giay.Controllers
         }
 
         [HttpGet("getbyid")]
+        [AllowAnonymous]
         public ActionResult<SanPhamGiayMD> GetById(int id)
         {
             if (id <= 0)
@@ -55,6 +59,7 @@ namespace shop_giay.Controllers
             return Ok(_SanPhamGiayRepo.AddAnhSanPhamGiay(files,id));
         }
         [HttpGet("GetByName")]
+        [AllowAnonymous]
         public IActionResult GetByName( string name)
         {
             return Ok(_SanPhamGiayRepo.GetByName( name));

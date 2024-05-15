@@ -56,7 +56,7 @@ namespace shop_giay.ViewModel
         public string Email { get; set; }
         public string HoTen { get; set; }
         public string TenUser { get; set; }
-        [RegularExpression(@"^(?=.*[A-Z])(?=.*\W).{1,3}$", ErrorMessage = "Mật khẩu phải có ít nhất 1 ký tự đặc biệt, ít nhất 1 chữ hoa và có độ dài từ 1 đến 3 ký tự.")]
+        [RegularExpression(@"^(?=.*[A-Z])(?=.*\W).{1,16}$", ErrorMessage = "Mật khẩu phải có ít nhất 1 ký tự đặc biệt, ít nhất 1 chữ hoa và có độ dài từ 1 đến 16 ký tự.")]
         //[RegularExpression(@"^(?=(.*[A-Z].*[A-Z]))(?=(.*\W.*\W)).{1,3}$", ErrorMessage = "Mật khẩu phải có ít nhất 2 ký tự đặc biệt, ít nhất 2 chữ hoa và có độ dài từ 1 đến 3 ký tự.")]
         public string Password { get; set; }
        

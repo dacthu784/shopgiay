@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using shop_giay.Services;
 using shop_giay.ViewModel;
@@ -7,6 +8,7 @@ namespace shop_giay.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "1,3")]
     public class ChiTietDonNhapController : ControllerBase
     {
         private readonly IChiTietDonNhapRepository _chiTietDonNhapRepo;

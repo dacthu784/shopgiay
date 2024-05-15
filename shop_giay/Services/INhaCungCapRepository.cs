@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Emgu.CV.Features2D;
+using Microsoft.AspNetCore.Mvc;
 using shop_giay.Data;
+using shop_giay.Helper;
 using shop_giay.ViewModel;
 
 namespace shop_giay.Services
@@ -9,7 +11,7 @@ namespace shop_giay.Services
         JsonResult AddNhaCungCap(NhaCungCapVM ncc);
         JsonResult Deletenhacungcap(int id);
         JsonResult EditNhaCungCap(int id, NhaCungCapVM ncc);
-        List<NhaCungCapMD> GetAll();
+        List<NhaCungCapMD> GetAll(QueryObject queryObject);
     }
     public class NhaCungCapRepository : INhaCungCapRepository
     {
@@ -84,7 +86,7 @@ namespace shop_giay.Services
             }
         }
 
-        public List<NhaCungCapMD> GetAll()
+        public List<NhaCungCapMD> GetAll(QueryObject queryObject)
         {
             var kq = _context.NhaCungCaps.Select(o => new NhaCungCapMD
             {
@@ -93,8 +95,15 @@ namespace shop_giay.Services
                 DiaChi=o.DiaChi,
                 DienThoai=o.DienThoai,
                 Email=o.Email,
-            }).ToList();
-            return kq;
+            });
+            if (queryObject.IsDecsending == true)
+            {
+                kq = kq.OrderByDescending(c => c.TenNhaCungCap);
+            }
+
+            var skipNumber = (queryObject.PageNumber - 1) * queryObject.PageSize;
+
+            return kq.Skip(skipNumber).Take(queryObject.PageSize).ToList();
         }
     }
 }

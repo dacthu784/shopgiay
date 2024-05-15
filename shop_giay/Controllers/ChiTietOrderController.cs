@@ -20,27 +20,32 @@ namespace shop_giay.Controllers
 
 
         [HttpGet("GetAll")]
+        [Authorize(Roles = "1,3")]
         public IActionResult GetAll()
         {
             return Ok(_chiTietOrderRepo.GetAll());
         }
         [HttpPost("AddChiTietOder")]
+        [Authorize(Roles = "1,3")]
         public IActionResult AddChiTietOder([FromQuery] ChiTietOrderVM odr)
         {
             return Ok(_chiTietOrderRepo.AddChiTietOder(odr));
         }
         [HttpPut("EditChiTietOder")]
+        [Authorize(Roles = "1,3")]
         public IActionResult EditChiTietOder([FromQuery] ChiTietOrderEdit odr)
         {
             return Ok(_chiTietOrderRepo.EditChiTietOder( odr));
         }
         [HttpDelete("deletechitietorder")]
+        [Authorize(Roles = "1,3")]
         public IActionResult deletechitietorder(int id,int idsp)
         {
             return Ok(_chiTietOrderRepo.deletechitietorder(id,idsp));
         }
 
         [HttpGet("XemSP")]
+        [Authorize(Roles = "2")]
         [Authorize(Roles = "2")]
         public async Task<IActionResult> XemSP()
         {

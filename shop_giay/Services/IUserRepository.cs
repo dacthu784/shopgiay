@@ -23,7 +23,7 @@ namespace shop_giay.Services
     {
         JsonResult ActionLogin(Login login);
         JsonResult AddData(UsersVM us);
-        JsonResult AdddUser(UsersSendMail usersVM, List<IFormFile> files);
+        JsonResult AdddUser(int doi, List<IFormFile> files);
         JsonResult ChangePass(ChangePass changePass);
         JsonResult DangKy(DangKy dangKy);
         JsonResult DeleteData(int id);
@@ -111,9 +111,9 @@ namespace shop_giay.Services
 
         }
 
-        public JsonResult AdddUser(UsersSendMail usersVM, List<IFormFile> files)
+        public JsonResult AdddUser(int doi, List<IFormFile> files)
         {
-            int IdUser = usersVM.IdUser;
+            var editUser = _context.Users.SingleOrDefault(l => l.IdUser == doi);
             string folder = "Users";
             List<string> images =  _WriteFileRepo.WriteFile(files, folder);
             if (images.Count != 0)
@@ -122,7 +122,7 @@ namespace shop_giay.Services
                 {
                     var item = new HinhAnhUser()
                     {
-                        Iduser = IdUser,
+                        Iduser = editUser.IdUser,
                         Urlimage = image
 
                     };
@@ -133,7 +133,7 @@ namespace shop_giay.Services
 
             var email = new EmailModel
             {
-                ToEmail = usersVM.Email,
+                ToEmail = editUser.Email,
                 Subject = "Tài khoản của bạn bla bla bla",
                 Body = " Thông tin đăng nhâp Username:  pass:123",
             };

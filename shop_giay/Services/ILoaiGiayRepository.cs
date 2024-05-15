@@ -91,21 +91,13 @@ namespace shop_giay.Services
 
         public List<LoaiGiayMD> GetAll()
         {
-            var kq = _context.LoaiGiays.Include(u=>u.SanPhamGiays).Select(o => new LoaiGiayMD
+            var kq = _context.LoaiGiays.Select(o => new LoaiGiayMD
             {
                 IdLoaiGiay=o.IdLoaiGiay,
                 MaLoaiGiay = o.MaLoaiGiay,
                 TenLoaiGiay= o.TenLoaiGiay,
                 ThuTuHienThi=o.ThuTuHienThi,
-                SanPhamGiaysHienAdmin  = o.SanPhamGiays.Select( s=> new SanPhamHienTrongLoaiChoAdmin
-                {
-                    IdSanPham = s.IdSanPham,
-                    TenSanPham = s.TenSanPham,
-                    Gia = s.Gia,
-                    MoTa = s.MoTa,
-                    GiamGia = s.GiamGia,
-                    SoLuong = s.SoLuong,
-                }).ToList()
+               
                
             }).ToList();
             return kq;

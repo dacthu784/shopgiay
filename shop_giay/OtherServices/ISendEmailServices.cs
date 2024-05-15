@@ -17,7 +17,7 @@ namespace shop_giay.OtherServices
         {
             _confEmail = confEmail;
         }
-        public bool Send(EmailModel email) //List<string> attachments
+        public bool Send(EmailModel email) 
         {
             try
             {

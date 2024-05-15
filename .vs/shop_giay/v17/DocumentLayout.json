@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\shopgiay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\viewmodel\\usersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\viewmodel\\usersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|c:\\users\\pc\\desktop\\shopgiay\\shop_giay\\services\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\services\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|c:\\users\\pc\\desktop\\shopgiay\\shop_giay\\services\\ioderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\services\\ioderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|c:\\users\\pc\\desktop\\shopgiay\\shop_giay\\data\\sanphamyeuthich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\data\\sanphamyeuthich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|c:\\users\\pc\\desktop\\shopgiay\\shop_giay\\controllers\\sanphamyeuthichcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,34 +13,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|c:\\users\\pc\\desktop\\shopgiay\\shop_giay\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\controllers\\odercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\controllers\\odercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\services\\iproductsizequantityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\services\\iproductsizequantityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\controllers\\chitietordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\controllers\\chitietordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\viewmodel\\chitietordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\viewmodel\\chitietordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|c:\\users\\pc\\desktop\\shopgiay\\shop_giay\\services\\ichitietorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\services\\ichitietorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\viewmodel\\odervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\viewmodel\\odervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\data\\chitietorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E1515B-BF36-457F-BD8C-D187432AA783}|shop_giay\\shop_giay.csproj|solutionrelative:shop_giay\\data\\chitietorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,161 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SanPhamYeuThichController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\SanPhamYeuThichController.cs",
-              "RelativeDocumentMoniker": "shop_giay\\Controllers\\SanPhamYeuThichController.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\SanPhamYeuThichController.cs",
-              "RelativeToolTip": "shop_giay\\Controllers\\SanPhamYeuThichController.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAowD0AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T19:59:52.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "shop_giay\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\UserController.cs",
               "RelativeToolTip": "shop_giay\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAUwAAAAAAAAAAA",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAQwGAAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T19:59:19.786Z",
+              "WhenOpened": "2024-05-15T07:40:27.911Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "shop_giay\\Services\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IUserRepository.cs",
-              "RelativeToolTip": "shop_giay\\Services\\IUserRepository.cs",
-              "ViewState": "AQIAAKMBAAAAAAAAAAArwKwBAAAqAAAA",
+              "Title": "SanPhamYeuThichController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\SanPhamYeuThichController.cs",
+              "RelativeDocumentMoniker": "shop_giay\\Controllers\\SanPhamYeuThichController.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\SanPhamYeuThichController.cs",
+              "RelativeToolTip": "shop_giay\\Controllers\\SanPhamYeuThichController.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T19:59:06.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IOderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IOderRepository.cs",
-              "RelativeDocumentMoniker": "shop_giay\\Services\\IOderRepository.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IOderRepository.cs",
-              "RelativeToolTip": "shop_giay\\Services\\IOderRepository.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAGYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T19:58:30.512Z",
+              "WhenOpened": "2024-05-15T07:19:55.652Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UsersVM.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\UsersVM.cs",
-              "RelativeDocumentMoniker": "shop_giay\\ViewModel\\UsersVM.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\UsersVM.cs",
-              "RelativeToolTip": "shop_giay\\ViewModel\\UsersVM.cs",
-              "ViewState": "AQIAAGEAAAAAAAAAAIA3wHEAAAAIAAAA",
+              "Title": "SanPhamYeuThich.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Data\\SanPhamYeuThich.cs",
+              "RelativeDocumentMoniker": "shop_giay\\Data\\SanPhamYeuThich.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Data\\SanPhamYeuThich.cs",
+              "RelativeToolTip": "shop_giay\\Data\\SanPhamYeuThich.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAjwA8AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T18:59:28.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ChiTietOrderController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\ChiTietOrderController.cs",
-              "RelativeDocumentMoniker": "shop_giay\\Controllers\\ChiTietOrderController.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\ChiTietOrderController.cs",
-              "RelativeToolTip": "shop_giay\\Controllers\\ChiTietOrderController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T18:01:47.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ChiTietOrder.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Data\\ChiTietOrder.cs",
-              "RelativeDocumentMoniker": "shop_giay\\Data\\ChiTietOrder.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Data\\ChiTietOrder.cs",
-              "RelativeToolTip": "shop_giay\\Data\\ChiTietOrder.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAA1wBAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T18:00:05.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IProductSizeQuantityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IProductSizeQuantityRepository.cs",
-              "RelativeDocumentMoniker": "shop_giay\\Services\\IProductSizeQuantityRepository.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IProductSizeQuantityRepository.cs",
-              "RelativeToolTip": "shop_giay\\Services\\IProductSizeQuantityRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T17:49:15.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ChiTietOrderVM.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\ChiTietOrderVM.cs",
-              "RelativeDocumentMoniker": "shop_giay\\ViewModel\\ChiTietOrderVM.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\ChiTietOrderVM.cs",
-              "RelativeToolTip": "shop_giay\\ViewModel\\ChiTietOrderVM.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAkwFoAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T17:43:51.165Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "OderVM.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\OderVM.cs",
-              "RelativeDocumentMoniker": "shop_giay\\ViewModel\\OderVM.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\ViewModel\\OderVM.cs",
-              "RelativeToolTip": "shop_giay\\ViewModel\\OderVM.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAA/wA0AAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T17:40:06.227Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OderController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\OderController.cs",
-              "RelativeDocumentMoniker": "shop_giay\\Controllers\\OderController.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Controllers\\OderController.cs",
-              "RelativeToolTip": "shop_giay\\Controllers\\OderController.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAgwCkAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T17:39:40.228Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IChiTietOrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IChiTietOrderRepository.cs",
-              "RelativeDocumentMoniker": "shop_giay\\Services\\IChiTietOrderRepository.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\shopgiay\\shop_giay\\Services\\IChiTietOrderRepository.cs",
-              "RelativeToolTip": "shop_giay\\Services\\IChiTietOrderRepository.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAYwE8AAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T17:38:37.453Z",
+              "WhenOpened": "2024-05-15T06:59:34.596Z",
               "EditorCaption": ""
             }
           ]

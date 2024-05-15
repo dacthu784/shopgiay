@@ -111,40 +111,51 @@ namespace shop_giay.Services
                     IdSanPhamGiay = u.IdSanPhamNavigation.IdSanPhamGiay
                 }
 
-               
-                
-               
-
             }).ToList();
             return kq;
         }
 
         public JsonResult SendEmail()
         {
-           var a =  _context.SanPhamYeuThiches.Where(u => u.ChoPhepGuiEmail == true).Include(a => a.IdSanPhamNavigation).Where(k => k.IdSanPhamNavigation.SoLuong > 0).Select(s=>s.IdUser);
-            var b = _context.Users.Where(w => a.Contains(w.IdUser)).ToList();
-            foreach( var item in b)
+            var userIds = _context.SanPhamYeuThiches
+                .Where(u => u.ChoPhepGuiEmail == true)
+                .Include(a => a.IdSanPhamNavigation)
+                .Where(k => k.IdSanPhamNavigation.SoLuong > 0)
+                .Select(s => s.IdUser)
+                .ToList();
+
+            var users = _context.Users.Where(w => userIds.Contains(w.IdUser)).ToList();
+
+            foreach (var user in users)
             {
-                var gui = _context.SanPhamYeuThiches.Where(u => u.IdUser == item.IdUser).Include(a => a.IdSanPhamNavigation).ThenInclude(b => b.IdSanPhamGiayNavigation).Include(a=>a.IdSanPhamNavigation).ThenInclude(s=>s.IdSize).Select(u => u.IdSanPhamNavigation);
-                foreach(var i in gui)
+                var sanPhamYeuThiches = _context.SanPhamYeuThiches
+                    .Where(u => u.IdUser == user.IdUser)
+                    .Include(a => a.IdSanPhamNavigation)
+                    .ThenInclude(b => b.IdSanPhamGiayNavigation)
+                    .Include(a => a.IdSanPhamNavigation).ThenInclude(u=>u.IdSizeNavigation)
+                    .ToList();
+
+                foreach (var sanPhamYeuThich in sanPhamYeuThiches)
                 {
+                    var sanPham = sanPhamYeuThich.IdSanPhamNavigation;
+                    var sanPhamGiay = sanPham.IdSanPhamGiayNavigation;
+                    var size = sanPham.IdSizeNavigation;
+
                     var email = new EmailModel
                     {
-                        ToEmail = item.Email,
+                        ToEmail = user.Email,
                         Subject = "San pham cua ban da co",
-                        Body = " Da co san pham " + i.IdSanPhamGiayNavigation.TenSanPham + " Size: " + i.IdSizeNavigation.Size1 + " Gia: " + i.IdSanPhamGiayNavigation.Gia,
+                        Body = $"Da co san pham {sanPhamGiay?.TenSanPham ?? string.Empty} Size: {size?.Size1 ?? 0} Gia: {sanPhamGiay?.Gia ?? 0}"
                     };
 
                     sendEmailServices.Send(email);
                 }
-                
             }
-            return new JsonResult(" da send email thong bao cho khach hang")
+
+            return new JsonResult("da send email thong bao cho khach hang")
             {
                 StatusCode = StatusCodes.Status200OK
             };
-
-           
         }
     }
 }

@@ -10,6 +10,7 @@ namespace shop_giay.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class SanPhamYeuThichController : ControllerBase
     {
         private readonly ISanPhamYeuThichRepository _sanPhamYeuThichrepository;
@@ -23,6 +24,7 @@ namespace shop_giay.Controllers
 
         [HttpGet("GetAll")]
         [Authorize(Roles = "2")]
+
         public IActionResult GetAll()
         {
             var id = User.GetId();
@@ -30,7 +32,8 @@ namespace shop_giay.Controllers
             return Ok(_sanPhamYeuThichrepository.GetAll(doi));
         }
         [HttpPost("AddSanPhamYeuThich")]
-        [Authorize(Roles ="2")]
+        [Authorize(Roles = "2")]
+
         public IActionResult AddSanPhamYeuThich([FromQuery]SanPhamYeuThichVM sanPhamYeuThich)
         {
 
@@ -41,6 +44,7 @@ namespace shop_giay.Controllers
         }
         [HttpPut("EditSanPhamYeuThich")]
         [Authorize(Roles = "2")]
+
         public IActionResult EditSanPhamYeuThich(int id, SanPhamYeuThichVM sanPhamYeuThich)
         {
             var iduser = User.GetId();
@@ -50,6 +54,7 @@ namespace shop_giay.Controllers
         }
         [HttpDelete("DeleteSanPhamYeuThich")]
         [Authorize(Roles = "2")]
+
         public IActionResult DeleteSanPhamYeuThich(int id)
         {
            

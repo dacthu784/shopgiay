@@ -9,6 +9,7 @@ namespace shop_giay.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+   
     public class OderController : ControllerBase
     {
         private readonly IOderRepository _oderRepo;
@@ -19,21 +20,26 @@ namespace shop_giay.Controllers
         }
 
         [HttpGet("GetAll")]
+        [Authorize(Roles = "1,3")]
+
         public IActionResult GetAll()
         {
             return Ok(_oderRepo.GetAll());
         }
         [HttpPost("AddOrder")]
+        [Authorize(Roles = "1,3")]
         public IActionResult AddOrder([FromQuery ]OrderVM odr)
         {
             return Ok(_oderRepo.AddOrder(odr));
         }
         [HttpPut("EditOrder")]
+        [Authorize(Roles = "1,3")]
         public IActionResult EditOrder(int id, OrderVM odr)
         {
             return Ok(_oderRepo.EditOrder(id, odr));
         }
         [HttpDelete("DeleteOrder")]
+        [Authorize(Roles = "1,3")]
         public IActionResult DeleteOrder(int id)
         {
             return Ok(_oderRepo.DeleteLoaiUser(id));

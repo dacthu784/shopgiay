@@ -62,6 +62,7 @@ namespace shop_giay.ViewModel
     }
     public class ChiTietchoOrder
     {
+        public int IdOrder { get; set; }
         public string? TenSanPham { get; set; }
 
         public int? SoLuong { get; set; }

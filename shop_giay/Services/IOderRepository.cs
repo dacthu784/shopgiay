@@ -109,6 +109,7 @@ namespace shop_giay.Services
             {
                 XemChiTietOrders = u.ChiTietOrders.Select(u => new ChiTietchoOrder()
                 {
+                    IdOrder =u.IdOrder,
                     TenSanPham = u.IdSanPhamNavigation.TenSanPham,
                     SoLuong = u.SoLuong,
                     Gia=u.Gia,
