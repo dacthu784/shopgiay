@@ -94,7 +94,7 @@ builder.Services.AddScoped<IProductSizeQuantityRepository, ProductSizeQuantityRe
 
 builder.Services.AddScoped<IAnhRepository, AnhRepository>();
 builder.Services.AddScoped<IHinhAnhUserRepository, HinhAnhUserRepository>();
-builder.Services.AddScoped<ITokenServices,TokenService >();
+builder.Services.AddSingleton<ITokenServices,TokenService >();
 builder.Services.AddScoped<PasswordHasherServices>();
 
 

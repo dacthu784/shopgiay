@@ -100,11 +100,7 @@ public partial class ShopGiayContext : DbContext
 
             entity.HasIndex(e => e.Idloai, "IX_ChiTietOrders_idloai");
 
-            entity.Property(e => e.IdOrder).ValueGeneratedOnAdd();
             entity.Property(e => e.Gia).HasColumnType("decimal(10, 2)");
-            entity.Property(e => e.Ratting)
-                .HasMaxLength(10)
-                .IsFixedLength();
             entity.Property(e => e.Review)
                 .HasMaxLength(10)
                 .IsFixedLength();
@@ -212,7 +208,7 @@ public partial class ShopGiayContext : DbContext
             entity.HasIndex(e => e.IdUser, "IX_Orders_IdUser");
 
             entity.Property(e => e.NgayOrder).HasColumnType("date");
-            entity.Property(e => e.TongTien).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.TongTien).HasColumnType("decimal(18, 2)");
 
             entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.IdUser)
@@ -224,8 +220,6 @@ public partial class ShopGiayContext : DbContext
             entity.HasKey(e => e.IdSizeQuanltity);
 
             entity.ToTable("ProductSizeQuantity");
-
-            entity.Property(e => e.IdSizeQuanltity).ValueGeneratedNever();
 
             entity.HasOne(d => d.IdSanPhamGiayNavigation).WithMany(p => p.ProductSizeQuantities)
                 .HasForeignKey(d => d.IdSanPhamGiay)
@@ -262,7 +256,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.ToTable("SanPhamYeuThich");
 
-            entity.Property(e => e.IdSanPhamYeuThich).ValueGeneratedNever();
             entity.Property(e => e.AddedDate).HasColumnType("datetime");
 
             entity.HasOne(d => d.IdSanPhamNavigation).WithMany(p => p.SanPhamYeuThiches)
@@ -278,7 +271,6 @@ public partial class ShopGiayContext : DbContext
         {
             entity.HasKey(e => e.IdSize);
 
-            entity.Property(e => e.IdSize).ValueGeneratedNever();
             entity.Property(e => e.Size1).HasColumnName("Size");
         });
 

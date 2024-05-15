@@ -31,13 +31,13 @@ namespace shop_giay.OtherServices
             string pass = new string(chars);
             return pass;
         }
-        public static string HashPassword(string password) // abc@132
+        public static string HashPassword(string password) 
         {
             byte[] salt = GetRandom(16);
 
             string hashPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password = password, //abc@123
-                salt: salt, //sòhghpiu1hr08uwr98g
+                password = password, 
+                salt: salt, 
                 prf: KeyDerivationPrf.HMACSHA256,
                 iterationCount: 10000,
                 numBytesRequested: 32

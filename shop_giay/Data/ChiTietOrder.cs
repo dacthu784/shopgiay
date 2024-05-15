@@ -13,7 +13,7 @@ public partial class ChiTietOrder
 
     public decimal? Gia { get; set; }
 
-    public string? Ratting { get; set; }
+    public int? Ratting { get; set; }
 
     public string? Review { get; set; }
 

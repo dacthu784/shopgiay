@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using shop_giay.Data;
 using shop_giay.ViewModel;
 
@@ -6,7 +7,7 @@ namespace shop_giay.Services
 {
     public interface IProductSizeQuantityRepository
     {
-        JsonResult AddProDuctSizeQuantity(ProductSizeQuantityMD pds);
+        JsonResult AddProDuctSizeQuantity(ProductSizeQuantityVM pds);
         JsonResult DeleteProDuctSizeQuantity(int id);
         JsonResult EditProDuctSizeQuantity(int id, ProductSizeQuantityVM pds);
         List<ProductSizeQuantityMD> GetAll();
@@ -20,15 +21,36 @@ namespace shop_giay.Services
             _context = context;
         }
 
-        public JsonResult AddProDuctSizeQuantity(ProductSizeQuantityMD pds)
+        public JsonResult AddProDuctSizeQuantity(ProductSizeQuantityVM pds)
         {
+            var sanPhamGiaySum = _context.SanPhamGiays.SingleOrDefault(sp => sp.IdSanPham == pds.IdSanPhamGiay);
+            
+
+           
+
+            sanPhamGiaySum.SoLuong = sanPhamGiaySum.SoLuong + pds.SoLuong;
             var a = new ProductSizeQuantity()
             {
                 IdSanPhamGiay = pds.IdSanPhamGiay,
                 IdSize = pds.IdSize,
+                SoLuong = pds.SoLuong,
+                
+               
+                
             };
+            
             _context.ProductSizeQuantities.Add(a);
-            _context.SaveChanges();
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                // Log exception message or throw the error to be handled in upper layers
+                Console.WriteLine(ex.Message);
+               
+            }
             return new JsonResult("add thanh cong")
             {
                 StatusCode = StatusCodes.Status201Created
@@ -37,7 +59,11 @@ namespace shop_giay.Services
 
         public JsonResult DeleteProDuctSizeQuantity(int id)
         {
+           
+           
             var a = _context.ProductSizeQuantities.SingleOrDefault(l => l.IdSizeQuanltity == id);
+            var sanPhamGiayTru = _context.SanPhamGiays.SingleOrDefault(sp => sp.IdSanPham == a.IdSanPhamGiay);
+            sanPhamGiayTru.SoLuong = sanPhamGiayTru.SoLuong  - a.SoLuong;
             if (a != null)
             {
                 _context.Remove(a);
@@ -59,6 +85,8 @@ namespace shop_giay.Services
         public JsonResult EditProDuctSizeQuantity(int id, ProductSizeQuantityVM pds)
         {
             var Editpds = _context.ProductSizeQuantities.SingleOrDefault(l => l.IdSizeQuanltity == id);
+            var sanPhamGiayTru = _context.SanPhamGiays.SingleOrDefault(sp => sp.IdSanPham == pds.IdSanPhamGiay);
+            
             if (Editpds == null)
             {
                 return new JsonResult("Khong tim thay ProductSizeQuantity")
@@ -68,10 +96,11 @@ namespace shop_giay.Services
             }
             else
             {
+                sanPhamGiayTru.SoLuong = sanPhamGiayTru.SoLuong - Editpds.SoLuong + pds.SoLuong;
                 Editpds.IdSanPhamGiay = pds.IdSanPhamGiay;
                 Editpds.IdSize = pds.IdSize;
-               
-
+                Editpds.SoLuong = pds.SoLuong;
+                sanPhamGiayTru.SoLuong = sanPhamGiayTru.SoLuong  - Editpds.SoLuong + pds.SoLuong;
 
                 _context.SaveChanges();
                 return new JsonResult("Edit thanh cong")
@@ -88,6 +117,7 @@ namespace shop_giay.Services
              IdSizeQuanltity=pds.IdSizeQuanltity,
              IdSanPhamGiay=pds.IdSanPhamGiay,
              IdSize=pds.IdSize,
+             SoLuong=pds.SoLuong,
             }).ToList();
             return kq;
         }

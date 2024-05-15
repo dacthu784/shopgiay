@@ -26,11 +26,13 @@ namespace shop_giay.Services
         {
             var a = new ChiTietDonNhap()
             {
+                IdDonNhapHangHoa = ctdn.IdDonNhapHangHoa,
                 IdSanPham = ctdn.IdSanPham,
                 SoLuong = ctdn.SoLuong,
                 DonGia = ctdn.DonGia,
                 Vat = ctdn.Vat,
                 ThanhTien = ctdn.ThanhTien,
+                IdLoaiGiay = ctdn.IdLoaiGiay,
             };
             _context.ChiTietDonNhaps.Add(a);
             _context.SaveChanges();
@@ -73,12 +75,13 @@ namespace shop_giay.Services
             }
             else
             {
+                EditChiTietDonNhap.IdDonNhapHangHoa = ctdn.IdDonNhapHangHoa;
                 EditChiTietDonNhap.IdSanPham = ctdn.IdSanPham;
                 EditChiTietDonNhap.SoLuong = ctdn.SoLuong;
                 EditChiTietDonNhap.DonGia = ctdn.DonGia;
                 EditChiTietDonNhap.Vat = ctdn.Vat;
                 EditChiTietDonNhap.ThanhTien = ctdn.ThanhTien;
-
+                EditChiTietDonNhap.IdLoaiGiay = ctdn.IdLoaiGiay;
 
                 _context.SaveChanges();
                 return new JsonResult("Edit thanh cong")
@@ -100,6 +103,7 @@ namespace shop_giay.Services
               DonGia=o.DonGia,
               Vat=o.Vat,
               ThanhTien=o.ThanhTien,
+              IdLoaiGiay=o.IdLoaiGiay,
             }).ToList();
             return kq;
         }

@@ -15,6 +15,7 @@ using Emgu.CV.Features2D;
 using Microsoft.AspNetCore.Authorization;
 using Serilog;
 using Newtonsoft.Json.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace shop_giay.Services
 {
@@ -22,14 +23,16 @@ namespace shop_giay.Services
     {
         JsonResult ActionLogin(Login login);
         JsonResult AddData(UsersVM us);
-        JsonResult AdddUser(UsersSendMail usersVM, List<IFormFile> files);
+        JsonResult AdddUser(int doi, List<IFormFile> files);
         JsonResult ChangePass(ChangePass changePass);
         JsonResult DangKy(DangKy dangKy);
         JsonResult DeleteData(int id);
         JsonResult EditData(int id, UsersVM us);
-        List<UsersMD> GetAll(QueryObject queryObjec);
+       JsonResult EditForUser(int id,EditForUser us);
+        List<UsersHienAnh> GetAll(QueryObject queryObjec);
         UsersMD GetByInfo(Info info);
         JsonResult ResetPass(int id);
+       
     }
     public class UserRepository : IUserRepository
     {
@@ -88,6 +91,7 @@ namespace shop_giay.Services
                     Email = us.Email,
                     Password = PasswordHasherServices.HashPassword(us.Password),
                     DiaChi = us.DiaChi,
+                    NgayTao = DateTime.Now,
                     IdLoaiUsers = us.IdLoaiUsers,
                 };
                 _context.Users.Add(a);
@@ -107,9 +111,9 @@ namespace shop_giay.Services
 
         }
 
-        public JsonResult AdddUser(UsersSendMail usersVM, List<IFormFile> files)
+        public JsonResult AdddUser(int doi, List<IFormFile> files)
         {
-            int IdUser = usersVM.IdUser;
+            var editUser = _context.Users.SingleOrDefault(l => l.IdUser == doi);
             string folder = "Users";
             List<string> images =  _WriteFileRepo.WriteFile(files, folder);
             if (images.Count != 0)
@@ -118,7 +122,7 @@ namespace shop_giay.Services
                 {
                     var item = new HinhAnhUser()
                     {
-                        Iduser = IdUser,
+                        Iduser = editUser.IdUser,
                         Urlimage = image
 
                     };
@@ -129,7 +133,7 @@ namespace shop_giay.Services
 
             var email = new EmailModel
             {
-                ToEmail = usersVM.Email,
+                ToEmail = editUser.Email,
                 Subject = "Tài khoản của bạn bla bla bla",
                 Body = " Thông tin đăng nhâp Username:  pass:123",
             };
@@ -156,7 +160,7 @@ namespace shop_giay.Services
                     {
                         var save = changePass.PasswordNhapLai;
                         data.Password = PasswordHasherServices.HashPassword(changePass.PasswordNhapLai);
-                         
+                         data.NgaySua = DateTime.Now;
                         _context.SaveChanges();
                         var sendmail = new EmailModel
                         {
@@ -201,6 +205,7 @@ namespace shop_giay.Services
             var save = PasswordHasherServices.GetRandomPassword();
             var hashpass = PasswordHasherServices.HashPassword(save);
             data.Password = hashpass;
+            data.NgaySua = DateTime.Now;
             _context.SaveChanges();
             var sendmail = new EmailModel
             {
@@ -229,6 +234,7 @@ namespace shop_giay.Services
                         HoTen=dangKy.HoTen,
                         Email = dangKy.Email,
                         Password = PasswordHasherServices.HashPassword(dangKy.NhapLaiPassword),
+                        NgayTao = DateTime.Now,
                         IdLoaiUsers = 2,
                     };
                     string token = tokenServices.CreateToken(a);
@@ -306,6 +312,7 @@ namespace shop_giay.Services
                 editUser.TenUser = us.TenUser;
                 editUser.Email = us.Email;
                 editUser.DiaChi = us.DiaChi;
+                editUser.NgaySua = DateTime.Now;
 
                 _context.SaveChanges();
                 return new JsonResult("Edit thanh cong")
@@ -315,9 +322,9 @@ namespace shop_giay.Services
             }
         }
 
-        public List<UsersMD> GetAll(QueryObject queryObjec)
+        public List<UsersHienAnh> GetAll(QueryObject queryObjec)
         {
-            var users = _context.Users.Select(l => new UsersMD
+            var users = _context.Users.Include(u => u.HinhAnhUsers).Select(l => new UsersHienAnh
             {
                 IdUser = l.IdUser,
                 TenUser = l.TenUser,
@@ -325,12 +332,18 @@ namespace shop_giay.Services
                 Password = l.Password,
                 DiaChi = l.DiaChi,
                 IdLoaiUsers = l.IdLoaiUsers,
-
-            });
+                HinhAnhUsers = l.HinhAnhUsers.Select(u => new HinhAnhUserLuuAnh()
+                {
+                    Urlimage = u.Urlimage,
+                    Isavarta = u.Isavarta
+                }).ToList()
+            });;
+            
             if (queryObjec.IsDecsending == true)
             {
                 users = users.OrderByDescending(c => c.TenUser);
             }
+            
             var skipNumber = (queryObjec.PageNumber - 1) * queryObjec.PageSize;
 
             return users.Skip(skipNumber).Take(queryObjec.PageSize).ToList();
@@ -407,5 +420,25 @@ namespace shop_giay.Services
 
 
         }
+
+        public JsonResult EditForUser(int id,EditForUser  us)
+        {
+            var editUser = _context.Users.SingleOrDefault(l => l.IdUser == id);
+           
+            
+                editUser.HoTen = us.HoTen;
+                editUser.Email = us.Email;
+                editUser.DiaChi = us.DiaChi;
+                editUser.NgaySua = DateTime.Now;
+
+                _context.SaveChanges();
+                return new JsonResult("Edit thanh cong")
+                {
+                    StatusCode = StatusCodes.Status200OK
+                };
+            
+        }
+
+       
     }
 }

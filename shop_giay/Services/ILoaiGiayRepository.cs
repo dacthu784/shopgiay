@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using shop_giay.Data;
 using shop_giay.ViewModel;
 
@@ -10,6 +11,8 @@ namespace shop_giay.Services
         JsonResult DeleteLoaiGiay(int id);
         JsonResult EditLoaiGiay(int id, LoaiGiayVM lg);
         List<LoaiGiayMD> GetAll();
+        List<HienCaSanPham> GetAllSP();
+        List<Tinhtong> TinhTong();
     }
 
     public class LoaiGiayRepo : ILoaiGiayRepository
@@ -95,6 +98,43 @@ namespace shop_giay.Services
                 TenLoaiGiay= o.TenLoaiGiay,
                 ThuTuHienThi=o.ThuTuHienThi,
                
+               
+            }).ToList();
+            return kq;
+        }
+
+        public List<HienCaSanPham> GetAllSP()
+        {
+            var kq = _context.LoaiGiays.Include(u => u.SanPhamGiays).Select(o => new HienCaSanPham
+            {
+                
+                MaLoaiGiay = o.MaLoaiGiay,
+                TenLoaiGiay = o.TenLoaiGiay,
+                ThuTuHienThi = o.ThuTuHienThi,
+                SanPhamGiaysHien = o.SanPhamGiays.Select(s => new SanPhamHienTrongLoai
+                {
+                   
+                    TenSanPham = s.TenSanPham,
+                    Gia = s.Gia,
+                    MoTa = s.MoTa,
+                    GiamGia = s.GiamGia,
+                    SoLuong = s.SoLuong,
+                }).ToList()
+
+            }).ToList();
+            return kq;
+        }
+
+        public List<Tinhtong> TinhTong()
+        {
+
+            var kq = _context.LoaiGiays.Include(u => u.ChiTietDonNhaps).Include(a => a.ChiTietOrders).Select(o => new Tinhtong
+            {
+                IdLoaiGiay = o.IdLoaiGiay,
+                MaLoaiGiay = o.MaLoaiGiay,
+                TenLoaiGiay = o.TenLoaiGiay,
+                TinhThuChi =  (double)o.ChiTietOrders.Sum(t=> t.Gia) - o.ChiTietDonNhaps.Sum(t => t.ThanhTien)
+
             }).ToList();
             return kq;
         }

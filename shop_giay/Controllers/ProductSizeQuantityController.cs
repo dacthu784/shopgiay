@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using shop_giay.Services;
 using shop_giay.ViewModel;
@@ -7,6 +8,7 @@ namespace shop_giay.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "1,3")]
     public class ProductSizeQuantityController : ControllerBase
     {
         private readonly IProductSizeQuantityRepository _productSizeQuantityRepository;
@@ -23,7 +25,7 @@ namespace shop_giay.Controllers
             return Ok(_productSizeQuantityRepository.GetAll());
         }
         [HttpPost("AddProDuctSizeQuantity")]
-        public IActionResult AddProDuctSizeQuantity(ProductSizeQuantityMD pds)
+        public IActionResult AddProDuctSizeQuantity(ProductSizeQuantityVM pds)
         {
             return Ok(_productSizeQuantityRepository.AddProDuctSizeQuantity(pds));
         }

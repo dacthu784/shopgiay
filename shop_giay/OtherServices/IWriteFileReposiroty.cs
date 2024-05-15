@@ -11,7 +11,7 @@
             string local;
 
             var imageUrls = new List<string>();
-            var errorMessages = new List<string>(); // Danh sách để lưu trữ thông báo lỗi
+            var errorMessages = new List<string>();
 
             foreach (var file in files)
             {
@@ -32,7 +32,6 @@
                 }
                 else
                 {
-                    // Nếu extension không hợp lệ, thêm thông báo lỗi vào danh sách và chuyển sang file tiếp theo
                     errorMessages.Add($"File không hợp lệ '{file.FileName}'.");
                     continue;
                 }
@@ -57,7 +56,7 @@
                     errorMessages.Add($"Lỗi khi upload file '{file.FileName}': {ex.Message}");
                 }
             }
-            // Kiểm tra nếu có lỗi, trả về danh sách thông báo lỗi
+           
             if (errorMessages.Count > 0)
             {
                 throw new Exception(string.Join(Environment.NewLine, errorMessages));

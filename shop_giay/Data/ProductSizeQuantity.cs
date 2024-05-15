@@ -11,6 +11,8 @@ public partial class ProductSizeQuantity
 
     public int? IdSize { get; set; }
 
+    public int? SoLuong { get; set; }
+
     public virtual SanPhamGiay? IdSanPhamGiayNavigation { get; set; }
 
     public virtual Size? IdSizeNavigation { get; set; }
