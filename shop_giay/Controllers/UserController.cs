@@ -91,5 +91,6 @@ namespace shop_giay.Controllers
             var doi = int.Parse(id);
             return Ok(_UsersRepo.EditForUser( doi,us));
         }
+       
     }
 }

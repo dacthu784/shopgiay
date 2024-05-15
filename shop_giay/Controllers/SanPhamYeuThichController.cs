@@ -22,6 +22,7 @@ namespace shop_giay.Controllers
         }
 
         [HttpGet("GetAll")]
+        [Authorize(Roles = "2")]
         public IActionResult GetAll()
         {
             var id = User.GetId();
@@ -39,6 +40,7 @@ namespace shop_giay.Controllers
             return Ok(_sanPhamYeuThichrepository.AddSanPhamYeuThich(sanPhamYeuThich));
         }
         [HttpPut("EditSanPhamYeuThich")]
+        [Authorize(Roles = "2")]
         public IActionResult EditSanPhamYeuThich(int id, SanPhamYeuThichVM sanPhamYeuThich)
         {
             var iduser = User.GetId();
@@ -57,7 +59,7 @@ namespace shop_giay.Controllers
             return Ok(_sanPhamYeuThichrepository.DeleteSanPhamYeuThich(id,doi));
         }
         [HttpPost("Sendemail")]
-        //[Authorize(Roles = "2")]
+        [Authorize(Roles = "1,3")]
         public IActionResult SendEmail()
         {
 

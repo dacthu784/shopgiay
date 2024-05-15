@@ -100,7 +100,6 @@ public partial class ShopGiayContext : DbContext
 
             entity.HasIndex(e => e.Idloai, "IX_ChiTietOrders_idloai");
 
-            entity.Property(e => e.IdOrder).ValueGeneratedOnAdd();
             entity.Property(e => e.Gia).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.Review)
                 .HasMaxLength(10)
@@ -209,7 +208,7 @@ public partial class ShopGiayContext : DbContext
             entity.HasIndex(e => e.IdUser, "IX_Orders_IdUser");
 
             entity.Property(e => e.NgayOrder).HasColumnType("date");
-            entity.Property(e => e.TongTien).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.TongTien).HasColumnType("decimal(18, 2)");
 
             entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.IdUser)

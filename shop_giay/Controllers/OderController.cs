@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using shop_giay.Extension;
 using shop_giay.Services;
 using shop_giay.ViewModel;
 
@@ -22,7 +24,7 @@ namespace shop_giay.Controllers
             return Ok(_oderRepo.GetAll());
         }
         [HttpPost("AddOrder")]
-        public IActionResult AddOrder(OrderVM odr)
+        public IActionResult AddOrder([FromQuery ]OrderVM odr)
         {
             return Ok(_oderRepo.AddOrder(odr));
         }
@@ -36,6 +38,16 @@ namespace shop_giay.Controllers
         {
             return Ok(_oderRepo.DeleteLoaiUser(id));
         }
-        
+        [HttpGet("XemChiTietOrders")]
+        [Authorize(Roles = "2")]
+        public async Task<IActionResult> XemChiTietOrders()
+        {
+            var id = User.GetId();
+            var doi = int.Parse(id);
+            return Ok(_oderRepo.XemChiTietOrders(doi));
+
+
+
+        }
     }
 }

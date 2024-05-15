@@ -4,7 +4,7 @@ namespace shop_giay.ViewModel
 {
     public class SizeVM
     {
-        public int? Size { get; set; }
+        public int? Size1 { get; set; }
 
     }
     public class SizeMD:SizeVM 

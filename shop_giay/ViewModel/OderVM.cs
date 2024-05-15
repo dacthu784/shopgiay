@@ -5,7 +5,7 @@ namespace shop_giay.ViewModel
 {
     public class OrderVM
     {
-        public int IdOrder { get; set; }
+       
         public int? IdUser { get; set; }
 
         [BindNever]
@@ -15,11 +15,21 @@ namespace shop_giay.ViewModel
     }
     public class OrderMD:OrderVM 
     {
-        
+        public int IdOrder { get; set; }
 
         public virtual ICollection<ChiTietOrder> ChiTietOrders { get; set; } = new List<ChiTietOrder>();
 
         public virtual User? IdUserNavigation { get; set; }
+    }
+    public class XemChiTietOrder
+    {
+        public virtual ICollection<ChiTietchoOrder> XemChiTietOrders { get; set; } = new List<ChiTietchoOrder>();
+        public DateTime? NgayOrder { get; set; }
+            
+            public decimal? TongTien { get; set; }
+
+
+
     }
 
 }

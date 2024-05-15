@@ -132,7 +132,7 @@ namespace shop_giay.Services
                     {
                         ToEmail = item.Email,
                         Subject = "San pham cua ban da co",
-                        Body = " Da co san pham " + i.IdSanPhamGiayNavigation.TenSanPham + " Size: " + i.IdSizeNavigation.Size + " Gia: " + i.IdSanPhamGiayNavigation.Gia,
+                        Body = " Da co san pham " + i.IdSanPhamGiayNavigation.TenSanPham + " Size: " + i.IdSizeNavigation.Size1 + " Gia: " + i.IdSanPhamGiayNavigation.Gia,
                     };
 
                     sendEmailServices.Send(email);

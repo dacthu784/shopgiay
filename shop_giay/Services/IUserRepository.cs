@@ -32,6 +32,7 @@ namespace shop_giay.Services
         List<UsersHienAnh> GetAll(QueryObject queryObjec);
         UsersMD GetByInfo(Info info);
         JsonResult ResetPass(int id);
+       
     }
     public class UserRepository : IUserRepository
     {
@@ -425,7 +426,7 @@ namespace shop_giay.Services
             var editUser = _context.Users.SingleOrDefault(l => l.IdUser == id);
            
             
-                
+                editUser.HoTen = us.HoTen;
                 editUser.Email = us.Email;
                 editUser.DiaChi = us.DiaChi;
                 editUser.NgaySua = DateTime.Now;
@@ -437,5 +438,7 @@ namespace shop_giay.Services
                 };
             
         }
+
+       
     }
 }

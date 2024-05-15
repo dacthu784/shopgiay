@@ -56,7 +56,8 @@ namespace shop_giay.ViewModel
         public string Email { get; set; }
         public string HoTen { get; set; }
         public string TenUser { get; set; }
-
+        [RegularExpression(@"^(?=.*[A-Z])(?=.*\W).{1,3}$", ErrorMessage = "Mật khẩu phải có ít nhất 1 ký tự đặc biệt, ít nhất 1 chữ hoa và có độ dài từ 1 đến 3 ký tự.")]
+        //[RegularExpression(@"^(?=(.*[A-Z].*[A-Z]))(?=(.*\W.*\W)).{1,3}$", ErrorMessage = "Mật khẩu phải có ít nhất 2 ký tự đặc biệt, ít nhất 2 chữ hoa và có độ dài từ 1 đến 3 ký tự.")]
         public string Password { get; set; }
        
         public string NhapLaiPassword { get; set; }
@@ -67,6 +68,7 @@ namespace shop_giay.ViewModel
         //public string Email { get; set; }
         public string UserOrEmail { get; set; }
         public string Password { get; set; }
+        [RegularExpression(@"^(?=.*[A-Z])(?=.*\W).{1,3}$", ErrorMessage = "Mật khẩu phải có ít nhất 1 ký tự đặc biệt, ít nhất 1 chữ hoa và có độ dài từ 1 đến 3 ký tự.")]
         public string DoiPassword { get; set; }
         public string PasswordNhapLai { get; set; }
     }
@@ -109,16 +111,9 @@ namespace shop_giay.ViewModel
         public string? DiaChi { get; set; }
 
        
-        public DateTime? NgayTao { get; set; }
+        
 
         public DateTime? NgaySua { get; set; }
     }
-    public class XemChiTietOrder
-
-    {
-        public string? TenUser { get; set; }
-        public string? HoTen { get; set; }
-
-   
-    }
+    
 }

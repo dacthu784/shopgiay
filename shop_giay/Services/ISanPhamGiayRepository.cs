@@ -63,7 +63,7 @@ namespace shop_giay.Services
             {
                 IdLoaiGiay = spg.IdLoaiGiay,
                 MoTa = spg.MoTa,
-                SoLuong = spg.SoLuong,
+                //SoLuong = spg.SoLuong,
                 Gia = spg.Gia,
                 GiamGia = spg.GiamGia,
 
@@ -111,7 +111,7 @@ namespace shop_giay.Services
             {
                 editsanphamgiay.IdLoaiGiay = spg.IdLoaiGiay;
                 editsanphamgiay.MoTa = spg.MoTa;
-                editsanphamgiay.SoLuong = spg.SoLuong;
+                //editsanphamgiay.SoLuong = spg.SoLuong;
                 editsanphamgiay.Gia = spg.Gia;
                 editsanphamgiay.GiamGia = spg.GiamGia;
 
@@ -203,7 +203,7 @@ namespace shop_giay.Services
                 TenSanPham = spg.TenSanPham,
                 IdLoaiGiay = spg.IdLoaiGiay,
                 MoTa = spg.MoTa,
-                SoLuong = spg.SoLuong,
+                //SoLuong = spg.SoLuong,
                 Gia = spg.Gia,
                 GiamGia = spg.GiamGia,
             };
@@ -220,7 +220,7 @@ namespace shop_giay.Services
                 IdLoaiGiay = spg.IdLoaiGiay,
                 TenSanPham = spg.TenSanPham,
                 MoTa = spg.MoTa,
-                SoLuong = spg.SoLuong,
+                //SoLuong = spg.SoLuong,
                 Gia = spg.Gia,
                 GiamGia = spg.GiamGia,
             };

@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using shop_giay.Data;
 using shop_giay.ViewModel;
+using System.Security.Cryptography.Xml;
 
 namespace shop_giay.Services
 {
@@ -10,6 +13,7 @@ namespace shop_giay.Services
         JsonResult DeleteLoaiUser(int id);
         JsonResult EditOrder(int id, OrderVM odr);
         List<OrderMD> GetAll();
+        List<XemChiTietOrder> XemChiTietOrders(int doi);
     }
 
     public class OderRepository : IOderRepository
@@ -23,12 +27,12 @@ namespace shop_giay.Services
 
         public JsonResult AddOrder(OrderVM odr)
         {
-           var tong = _context.ChiTietOrders.Where(w => w.IdOrder == odr.IdOrder).Sum(t => t.Gia);
+           
              var a = new Order()
             {
               IdUser=odr.IdUser,
               NgayOrder=DateTime.Now,
-              TongTien=tong
+             
             };
             _context.Orders.Add(a);
             _context.SaveChanges();
@@ -95,6 +99,27 @@ namespace shop_giay.Services
                
             }).ToList();
             return kq;
+        }
+        
+        public List<XemChiTietOrder> XemChiTietOrders(int doi)
+        {
+            var xem = _context.Users.Where(l => l.IdUser == doi).Include(u => u.Orders).ThenInclude(a => a.ChiTietOrders).ThenInclude(g => g.IdSanPhamNavigation).SingleOrDefault();
+
+            var hien = xem.Orders.Select(u => new XemChiTietOrder()
+            {
+                XemChiTietOrders = u.ChiTietOrders.Select(u => new ChiTietchoOrder()
+                {
+                    TenSanPham = u.IdSanPhamNavigation.TenSanPham,
+                    SoLuong = u.SoLuong,
+                    Gia=u.Gia,
+                    Ratting = u.Ratting,
+                    Review = u.Review
+                }).ToList(),
+                NgayOrder = u.NgayOrder,
+                TongTien = u.TongTien,
+            });
+
+            return hien.ToList();
         }
     }
 }

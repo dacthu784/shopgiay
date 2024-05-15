@@ -19,13 +19,13 @@ namespace shop_giay.ViewModel
 
         public decimal? GiamGia { get; set; }
 
-        public int? SoLuong { get; set; }
+        //public int? SoLuong { get; set; }
     }
     public class SanPhamGiayMD:SanPhamGiayVM 
     {
         public int IdSanPham { get; set; }
+        public int? SoLuong { get; set; }
 
-       
 
         public virtual ICollection<Anh> Anhs { get; set; } = new List<Anh>();
 
