@@ -104,8 +104,8 @@ builder.Services.AddScoped<IAnhRepository, AnhRepository>();
 builder.Services.AddScoped<IHinhAnhUserRepository, HinhAnhUserRepository>();
 
 
-
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
