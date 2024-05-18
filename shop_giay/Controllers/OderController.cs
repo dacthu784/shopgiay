@@ -46,7 +46,7 @@ namespace shop_giay.Controllers
         }
         [HttpGet("XemChiTietOrders")]
         [Authorize(Roles = "2")]
-        public async Task<IActionResult> XemChiTietOrders()
+        public IActionResult XemChiTietOrders()
         {
             var id = User.GetId();
             var doi = int.Parse(id);

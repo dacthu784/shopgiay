@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Core;
 using Microsoft.EntityFrameworkCore;
 using shop_giay.Helper;
 using shop_giay.OtherServices;
+using Microsoft.Extensions.DependencyInjection;
 namespace shop_giay.Services
 {
     public interface ISanPhamYeuThichRepository
@@ -14,19 +15,66 @@ namespace shop_giay.Services
         JsonResult AddSanPhamYeuThich(SanPhamYeuThichVM sanPhamYeuThich);
         JsonResult DeleteSanPhamYeuThich(int id,int doi);
         JsonResult EditSanPhamYeuThich(int id, SanPhamYeuThichVM sanPhamYeuThich);
-        List<SanPhamYeuThichVMNoUserName> GetAll(int doi);
+        HienTrendingAndYeuThich GetAll(int doi);
         JsonResult SendEmail();
     }
     public class SanPhamYeuThichRepository : ISanPhamYeuThichRepository
     {
+        private readonly IServiceScopeFactory _scopeFactory;
         private readonly ShopGiayContext _context;
         public readonly ISendEmailServices sendEmailServices;
+        Timer _timer;
 
-        public SanPhamYeuThichRepository(ShopGiayContext context, ISendEmailServices sendEmailServices)
+        public SanPhamYeuThichRepository(ShopGiayContext context, ISendEmailServices sendEmailServices, IServiceScopeFactory serviceScopeFactory)
         {
             _context = context;
-            this.sendEmailServices = sendEmailServices; 
+            _scopeFactory = serviceScopeFactory;
+            this.sendEmailServices = sendEmailServices;
+            _timer = new Timer(UpdateSanPhamTrending, null, TimeSpan.Zero, TimeSpan.FromSeconds(30));
         }
+
+       
+
+        private void  UpdateSanPhamTrending(object? state)
+        {
+            using (var scope = _scopeFactory.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<ShopGiayContext>();
+
+                var them =  dbContext.SanPhamSoLanNhaps.OrderByDescending(u => u.SoLanNhap).Take(5).ToList();
+                var allSanPham =  dbContext.SanPhamTrendings.ToList();
+
+                if (allSanPham.Any())
+                {
+                    dbContext.SanPhamTrendings.RemoveRange(allSanPham);
+
+                    foreach (var item in them)
+                    {
+                        var td = new SanPhamTrending()
+                        {
+                            IdProduct = item.Idsanpham
+                        };
+
+                        dbContext.SanPhamTrendings.Add(td);
+                    }
+                }
+                else
+                {
+                    foreach (var item in them)
+                    {
+                        var td = new SanPhamTrending()
+                        {
+                            IdProduct = item.Idsanpham
+                        };
+
+                        dbContext.SanPhamTrendings.Add(td);
+                    }
+                }
+
+               dbContext.SaveChanges();
+            }
+        }
+
         public JsonResult AddSanPhamYeuThich(SanPhamYeuThichVM sanPhamYeuThich)
         {
             
@@ -37,7 +85,7 @@ namespace shop_giay.Services
 
                AddedDate = DateTime.Now,
 
-              ChoPhepGuiEmail = sanPhamYeuThich.ChoPhepGuiEmail
+            
 
 
             };
@@ -86,7 +134,7 @@ namespace shop_giay.Services
             {
                
                 EditSanPhamYeuThich.IdSanPham = sanPhamYeuThich.IdsanPham;
-                EditSanPhamYeuThich.ChoPhepGuiEmail = sanPhamYeuThich.ChoPhepGuiEmail;
+                
 
 
                 _context.SaveChanges();
@@ -97,11 +145,16 @@ namespace shop_giay.Services
             }
         }
 
-        public List<SanPhamYeuThichVMNoUserName> GetAll(int doi)
+        public HienTrendingAndYeuThich GetAll(int doi)
         {
             var a = _context.SanPhamYeuThiches.Where(u => u.IdUser == doi).Include(a => a.IdSanPhamNavigation).ToList(); ;
-            var kq = a.Select(u => new SanPhamYeuThichVMNoUserName()
+           
+          
+            var cuoi = new HienTrendingAndYeuThich()
             {
+
+                SPYT = a.Select(u => new SanPhamYeuThichVMNoUserName()
+                 {
                 IdSanPhamYeuThich = u.IdSanPhamYeuThich,
                 IdsanPham = u.IdSanPham,
                 AddedDate = u.AddedDate,
@@ -111,24 +164,36 @@ namespace shop_giay.Services
                     IdSanPhamGiay = u.IdSanPhamNavigation.IdSanPhamGiay
                 }
 
-            }).ToList();
-            return kq;
+
+                }).ToList(),
+                SPTD = _context.SanPhamTrendings.Select(u => new SanPhamTrendingVM()
+                {
+                    IsSanPham = u.IdProduct
+                }).ToList()
+
+
+        };
+
+
+
+
+            return cuoi;
         }
 
         public JsonResult SendEmail()
         {
             var userIds = _context.SanPhamYeuThiches
-                .Where(u => u.ChoPhepGuiEmail == true)
+               
                 .Include(a => a.IdSanPhamNavigation)
                 .Where(k => k.IdSanPhamNavigation.SoLuong > 0)
-                .Select(s => s.IdUser)
+                .Select(s => s.IdUser).Distinct()
                 .ToList();
 
             var users = _context.Users.Where(w => userIds.Contains(w.IdUser)).ToList();
 
             foreach (var user in users)
             {
-                var sanPhamYeuThiches = _context.SanPhamYeuThiches
+                var sanPhamYeuThiches = _context.SanPhamYeuThiches.Where(k => k.IdSanPhamNavigation.SoLuong > 0)
                     .Where(u => u.IdUser == user.IdUser)
                     .Include(a => a.IdSanPhamNavigation)
                     .ThenInclude(b => b.IdSanPhamGiayNavigation)

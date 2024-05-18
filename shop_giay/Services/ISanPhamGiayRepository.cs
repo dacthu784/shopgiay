@@ -12,11 +12,11 @@ namespace shop_giay.Services
     {
         JsonResult AddAnhSanPhamGiay(List<IFormFile> files, int id);
         JsonResult AddSanPham(SanPhamGiayVM spg);
-        
+
         JsonResult DeleteSanPhamGiay(int id);
-       
+
         JsonResult EditSanPhamGiay(int id, SanPhamGiayVM spg);
-        
+
         List<SanPhamHienAnh> GetAll(QueryObject queryObject, string option);
         SanPhamGiayVM GetById(int id);
         SanPhamGiayVM GetByName(string name);
@@ -25,7 +25,7 @@ namespace shop_giay.Services
     {
         private readonly ShopGiayContext _context;
         private readonly IWriteFileRepository _writeFileRepository;
-
+        Timer _timer;
         public SanPhamGiayRepository(ShopGiayContext context, IWriteFileRepository writeFileRepository)
         {
             _context = context;
@@ -34,7 +34,7 @@ namespace shop_giay.Services
 
         public JsonResult AddAnhSanPhamGiay(List<IFormFile> files, int id)
         {
-            
+
             string folder = "Products";
             List<string> images = _writeFileRepository.WriteFile(files, folder);
             if (images.Count != 0)
@@ -150,24 +150,24 @@ namespace shop_giay.Services
                 Rattings = o.ChiTietOrders.Count() > 0 ? o.ChiTietOrders.Sum(t => t.Ratting) / o.ChiTietOrders.Count() : 0
 
             }); ;
-           
+
             if (queryObject.IsDecsending == true)
             {
-                if(option == "Giatang")
+                if (option == "Giatang")
                 {
                     kq = kq.OrderByDescending(c => c.Gia);
                 }
 
-                else if(option == "name")
+                else if (option == "name")
                 {
                     kq = kq.OrderByDescending(c => c.TenSanPham);
                 }
-                else if(option == "ratting")
+                else if (option == "ratting")
                 {
-                   
+
                     kq = kq.OrderByDescending(c => c.Rattings);
                 }
-                
+
             }
             else
             {
@@ -189,25 +189,57 @@ namespace shop_giay.Services
             var skipNumber = (queryObject.PageNumber - 1) * queryObject.PageSize;
 
             return kq.Skip(skipNumber).Take(queryObject.PageSize).ToList();
-           
+
         }
 
-        public  SanPhamGiayVM GetById(int id)
+        public SanPhamGiayVM GetById(int id)
         {
-            var spg =  _context.SanPhamGiays.FirstOrDefault(l => l.IdSanPham == id);
+            var spg = _context.SanPhamGiays.FirstOrDefault(l => l.IdSanPham == id);
             if (spg == null)
-                return null!;
-            return new SanPhamGiayVM
             {
-               
-                TenSanPham = spg.TenSanPham,
-                IdLoaiGiay = spg.IdLoaiGiay,
-                MoTa = spg.MoTa,
-                //SoLuong = spg.SoLuong,
-                Gia = spg.Gia,
-                GiamGia = spg.GiamGia,
-            };
+                return null!;
+            }
+            else
+            {
+                var a = _context.SanPhamSoLanNhaps.SingleOrDefault(u => u.Idsanpham == id);
+                if (a != null)
+                {
+                    a.SoLanNhap +=  1;
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    var nhap = new SanPhamSoLanNhap()
+                    {
+                        Idsanpham = id,
+                        SoLanNhap = 1
+                    };
+                    _context.SanPhamSoLanNhaps.Add(nhap);
+                    _context.SaveChanges();
+                }
+                return new SanPhamGiayVM
+                {
+
+                    TenSanPham = spg.TenSanPham,
+                    IdLoaiGiay = spg.IdLoaiGiay,
+                    MoTa = spg.MoTa,
+                    //SoLuong = spg.SoLuong,
+                    Gia = spg.Gia,
+                    GiamGia = spg.GiamGia,
+                };
+
+            }
+
+
+
         }
+
+
+
+
+
+
+
 
         public SanPhamGiayVM GetByName(string name)
         {
@@ -226,6 +258,7 @@ namespace shop_giay.Services
             };
         }
     }
+}
  
 
-}
+

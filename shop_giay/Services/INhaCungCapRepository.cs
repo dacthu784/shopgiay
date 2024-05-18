@@ -63,6 +63,7 @@ namespace shop_giay.Services
         public JsonResult EditNhaCungCap(int id, NhaCungCapVM ncc)
         {
             var editnhacungcap = _context.NhaCungCaps.SingleOrDefault(l => l.IdNhaCungCap == id);
+
             if (editnhacungcap == null)
             {
                 return new JsonResult("Khong tim thay Nha Cung Cap")
@@ -96,14 +97,14 @@ namespace shop_giay.Services
                 DienThoai=o.DienThoai,
                 Email=o.Email,
             });
-            if (queryObject.IsDecsending == true)
+            if (queryObject.IsDecsending == true) // true se giam dan
             {
-                kq = kq.OrderByDescending(c => c.TenNhaCungCap);
+                kq = kq.OrderByDescending(c => c.TenNhaCungCap); // giam theo ten nha cung cap
             }
 
-            var skipNumber = (queryObject.PageNumber - 1) * queryObject.PageSize;
+            var skipNumber = (queryObject.PageNumber - 1) * queryObject.PageSize; 
 
-            return kq.Skip(skipNumber).Take(queryObject.PageSize).ToList();
+            return kq.Skip(skipNumber).Take(queryObject.PageSize).ToList(); // skip bo qua , take se lay
         }
     }
 }

@@ -47,7 +47,7 @@ namespace shop_giay.Controllers
         [HttpGet("XemSP")]
         [Authorize(Roles = "2")]
         [Authorize(Roles = "2")]
-        public async Task<IActionResult> XemSP()
+        public  IActionResult XemSP()
         {
             var id = User.GetId();
             var doi = int.Parse(id);

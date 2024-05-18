@@ -13,8 +13,6 @@ public partial class SanPhamYeuThich
 
     public DateTime? AddedDate { get; set; }
 
-    public bool? ChoPhepGuiEmail { get; set; }
-
     public virtual ProductSizeQuantity? IdSanPhamNavigation { get; set; }
 
     public virtual User? IdUserNavigation { get; set; }

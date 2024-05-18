@@ -58,14 +58,14 @@ namespace shop_giay.Controllers
         }
         [HttpPost("login")]
         [AllowAnonymous]
-        public async Task<IActionResult> ActionLogin([FromQuery] Login login)
+        public IActionResult ActionLogin([FromQuery] Login login)
         {
             return Ok(_UsersRepo.ActionLogin(login));
            
         }
         [HttpPost("DangKy")]
         [AllowAnonymous]
-        public async Task<IActionResult> DangKy([FromQuery] DangKy dangKy)
+        public  IActionResult DangKy([FromQuery] DangKy dangKy)
         {
             return Ok(_UsersRepo.DangKy(dangKy));
 
@@ -74,7 +74,7 @@ namespace shop_giay.Controllers
         }
         [HttpPut("ChangePass")]
         [AllowAnonymous]
-        public async Task<IActionResult> ChangePass(ChangePass changePass)
+        public IActionResult ChangePass(ChangePass changePass)
         {
             return Ok(_UsersRepo.ChangePass(changePass));
         }

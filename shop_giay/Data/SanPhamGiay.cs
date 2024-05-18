@@ -28,4 +28,8 @@ public partial class SanPhamGiay
     public virtual LoaiGiay? IdLoaiGiayNavigation { get; set; }
 
     public virtual ICollection<ProductSizeQuantity> ProductSizeQuantities { get; set; } = new List<ProductSizeQuantity>();
+
+    public virtual ICollection<SanPhamSoLanNhap> SanPhamSoLanNhaps { get; set; } = new List<SanPhamSoLanNhap>();
+
+    public virtual ICollection<SanPhamTrending> SanPhamTrendings { get; set; } = new List<SanPhamTrending>();
 }

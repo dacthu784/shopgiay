@@ -8,7 +8,7 @@ namespace shop_giay.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "1,3")]
+    [Authorize(Roles = "1")]
     public class HinhAnhUserController : ControllerBase
     {
         private readonly IHinhAnhUserRepository _hinhAnhUserRepo;

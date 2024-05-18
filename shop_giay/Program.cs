@@ -14,6 +14,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -72,6 +73,7 @@ builder.Services.AddAuthentication(opt =>
 
 builder.Services.AddAuthentication();
 builder.Services.AddDbContext<ShopGiayContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Dbcontext")));
+
 builder.Services.AddScoped<ILoaiUsersRepository, LoaiUsersRepo>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IWriteFileRepository, WriteFileRepository>();
@@ -121,14 +123,3 @@ app.MapControllers();
 
 app.Run();
 
-//void DeleteDatabse()
-//{
-//    var dbcontext = new ShopGiayContext();
-//    dbcontext.Database.EnsureDeleted();
-//}
-
-//void CreateDatabse()
-//{
-//    var dbcontext = new ShopGiayContext();
-//    dbcontext.Database.EnsureCreated();
-//}

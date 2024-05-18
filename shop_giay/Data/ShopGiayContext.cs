@@ -37,6 +37,10 @@ public partial class ShopGiayContext : DbContext
 
     public virtual DbSet<SanPhamGiay> SanPhamGiays { get; set; }
 
+    public virtual DbSet<SanPhamSoLanNhap> SanPhamSoLanNhaps { get; set; }
+
+    public virtual DbSet<SanPhamTrending> SanPhamTrendings { get; set; }
+
     public virtual DbSet<SanPhamYeuThich> SanPhamYeuThiches { get; set; }
 
     public virtual DbSet<Size> Sizes { get; set; }
@@ -248,6 +252,32 @@ public partial class ShopGiayContext : DbContext
             entity.HasOne(d => d.IdLoaiGiayNavigation).WithMany(p => p.SanPhamGiays)
                 .HasForeignKey(d => d.IdLoaiGiay)
                 .HasConstraintName("FK__Products__Catego__47DBAE45");
+        });
+
+        modelBuilder.Entity<SanPhamSoLanNhap>(entity =>
+        {
+            entity.HasKey(e => e.IdSpNhap);
+
+            entity.ToTable("SanPhamSoLanNhap");
+
+            entity.Property(e => e.Idsanpham).HasColumnName("idsanpham");
+
+            entity.HasOne(d => d.IdsanphamNavigation).WithMany(p => p.SanPhamSoLanNhaps)
+                .HasForeignKey(d => d.Idsanpham)
+                .HasConstraintName("FK_SanPhamSoLanNhap_SanPhamGiay");
+        });
+
+        modelBuilder.Entity<SanPhamTrending>(entity =>
+        {
+            entity.HasKey(e => e.IdSptrending);
+
+            entity.ToTable("SanPhamTrending");
+
+            entity.Property(e => e.IdSptrending).HasColumnName("IdSPTrending");
+
+            entity.HasOne(d => d.IdProductNavigation).WithMany(p => p.SanPhamTrendings)
+                .HasForeignKey(d => d.IdProduct)
+                .HasConstraintName("FK_SanPhamTrending_SanPhamGiay");
         });
 
         modelBuilder.Entity<SanPhamYeuThich>(entity =>

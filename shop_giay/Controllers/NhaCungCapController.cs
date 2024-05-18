@@ -20,6 +20,7 @@ namespace shop_giay.Controllers
         }
 
         [HttpGet("GetAll")]
+       
         public IActionResult GetAll([FromQuery] QueryObject queryObject)
         {
             return Ok(_nhaCungCapRepo.GetAll(queryObject));
